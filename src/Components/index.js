@@ -1,5 +1,4 @@
-import {MainGui} from "./MainGui";
+import { Footer } from './page/Footer';
+import { Header } from './page/Header';
 
-export {
-    MainGui
-}
+export { Footer, Header };

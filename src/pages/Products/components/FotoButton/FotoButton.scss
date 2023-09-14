@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.Foto {
+    display: flex;
+    align-items: center;
+}
+.Foto img{
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.Foto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .fotoItem {
+    display: flex; /* Добавляем стиль "display: flex" для выстраивания элементов в ряд */
+    flex-direction: column; /* Помещаем текст под изображением */
+    align-items: center; /* Выравниваем элементы по центру горизонтально */
+    font-family: sans-serif;
+  }
+  
+  .fotoItem img {
+    width: 180px;
+    height: 130px;
+    border-radius: 2px;
+    
+  }
+  
+  .Foto p {
+    margin-top: 10px; /* Добавьте отступ сверху для текста */
+    font-family: sans-serif;
+    color: black;
+  }
+  

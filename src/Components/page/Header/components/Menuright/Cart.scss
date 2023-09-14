@@ -1,0 +1,25 @@
+.cart {
+  position: fixed;
+  top: 150px;
+  right: 0;
+  
+
+  .cart-icon {
+    color: rgb(20, 20, 20);
+    font-size: 24px; 
+    
+    &:hover {
+      color: red; 
+    }
+    
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0px;
+    }
+  }
+}

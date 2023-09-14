@@ -1,0 +1,43 @@
+.user-profile {
+    position: fixed;
+    top: 275px;
+    right: 14px; 
+    transform: translateY(-50%);
+    cursor: pointer;
+  
+    .profile-icon {
+      font-size: 24px;
+      color: #100e0e;
+
+      &:hover {
+        color: red; 
+      }
+
+    }
+  
+    &.active {
+      .profile-modal {
+        display: block;
+      }
+    }
+  }
+  
+  .profile-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+    .profile-modal-content {
+      text-align: center;
+  
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+  

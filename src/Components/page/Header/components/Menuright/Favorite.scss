@@ -1,0 +1,16 @@
+.favorite {
+    position: fixed;
+    top: 200px;
+    right: 0;
+  
+    .favorite-icon {
+      color: rgb(20, 20, 20);
+      font-size: 24px;
+      margin: 13px; 
+    
+      &:hover {
+        color: red; 
+      }
+    }
+  }
+  

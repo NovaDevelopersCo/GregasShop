@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   background-color: #ffffff;
-  color:black;
+  color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@
   z-index: 100; /* Установите значение z-index, чтобы меню было поверх остального контента */
 }
 
-.MainLogo img{
+.MainLogo img {
   position: absolute;
   left: 110px;
   top: -5px;
@@ -60,17 +60,24 @@
   padding: 10px 20px;
   z-index: 100;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень */
-  
 }
 .sticky img {
   position: absolute;
-  left: 235px
+  left: 235px;
 }
 .stickyKatalog {
   position: fixed;
-  top: 0; /* Установите значение top в 0, чтобы компонент был приклеен к верху экрана */
+  top: 0;       /* Установите значение top в 0, чтобы компонент был приклеен к верху экрана */
   left: 0;
   width: 100%;
   background-color: white;
   z-index: 100;
+}
+a:-webkit-any-link {  /*Стили для кнопок Колекции Хиты Sale Новые Поступления*/
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:-webkit-any-link:hover {
+  color: hotpink;
 }

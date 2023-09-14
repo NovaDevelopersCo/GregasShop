@@ -1,0 +1,13 @@
+hr {
+    color: gray;
+    margin: 30px;
+}
+hr.grad {
+    border: none; 
+    background: linear-gradient(to right, rgb(208, 55, 228), rgb(224, 40, 40) 90%);
+    height: 1px;
+  }
+  body {
+    font: 15px/24px "Open Sans", Arial, sans-serif;
+    
+}

@@ -1,0 +1,158 @@
+.footer_inner {
+    display: flex;
+    justify-content: left;
+    padding: 12px;
+    margin: 10px;
+    font-family: "poppins-regular", sans-serif;
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .wrapper_inner {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row.bottom-middle {
+    display: flex;
+  }
+  
+  .col-md-7,
+  .col-md-4, 
+  .col-lg-6,
+  .col-md-12, 
+  .col-sm-4, 
+  .col-sm-offset-2 {
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    margin: 30px;
+
+    
+  }
+  
+  .bottom-menu {
+    margin: 20px;
+  }
+
+  .info .contacts_block_footer {
+    margin-left: 10px;
+    margin-bottom: 15px;
+  }
+
+  .footer a {
+    text-decoration: none;
+  }
+
+  .bottom-menu a {
+    color: #555;
+    text-decoration: none;
+    font-family: sans-serif;
+  }
+
+  .bottom-menu a:hover {
+    color: red;
+  }
+
+  .bottom-menu {
+    margin: -5px;
+  }
+
+  .bottom-menu .items > .item-link {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 20px;
+  }
+
+  .contacts_block_footer {
+    margin-left: 110px;
+    
+  }
+  
+  .white_middle_text {
+    font-weight: bold;
+    
+  }
+
+  .title1 {
+    margin-top: 5px;
+    font-weight: bold;
+    margin: 0 45px 0 45px;
+  }
+
+  .title1 {
+    margin-bottom: 15px; 
+  }
+
+.title { 
+  margin-left: 45px;
+}
+  .work-time {
+    display: flex;
+    align-items: flex-start;
+}
+
+.work-time__text {
+  padding: 0px 20px 0px 12px;
+  
+}
+
+.work-time__text1 {
+  padding: 0px 0px 0px 30px;
+  margin-bottom: 15px;
+}
+
+.work-time__text2 a {
+  color: black;
+  text-decoration: none;
+  padding: 0px 0px 0px 30px;
+  margin-bottom: 15px;
+}
+
+.address-block_wrapper {
+  position: relative;
+  top: 25px;
+  
+}
+
+.email-block_wrapper {
+  position: relative;
+  top: 25px;
+}
+.phone_wrapper {
+  position: relative;
+  top: 25px;
+}
+
+.work-time__text3 a {
+  color: black;
+  text-decoration: none;
+  padding: 0px 0px 0px 30px;
+  margin-bottom: 15px;
+}
+
+.title2{
+  margin-top: 26px;
+  font-size: 20px;
+}
+.item {
+  a {
+    svg {
+      width: 40px;
+      height: 40px;
+      transition: fill 0.3s ease; 
+
+      path {
+        fill: black; 
+      }
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill: red; 
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+[
+    {
+      "id": 0,
+      "title": "Boba",
+      "img":"",
+      "category": 1,
+      "price": 25.99
+    },
+    {
+      "id": 1,
+      "title": "Soda",
+      "img":"",
+      "category": 2,
+      "price": 19.95
+    },
+    {
+      "id": 2,
+      "title": "Nodle",
+      "img":"",
+      "category": 1,
+      "price": 32.50
+    },
+    {
+      "id": 3,
+      "title": "Pen",
+      "img":"",
+      "category": 1,
+      "price": 32.50
+    },
+    {
+      "id": 4,
+      "title": "Pencil",
+      "img":"",
+      "category": 1,
+      "price": 32.50
+    },
+    {
+      "id": 5,
+      "title": "Book",
+      "img":"",
+      "category": 1,
+      "price": 32.50
+    },
+    {
+      "id": 6,
+      "title": "Ramen",
+      "img":"",
+      "category": 1,
+      "price": 32.50
+    }
+  ]
