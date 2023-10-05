@@ -9,13 +9,9 @@ export const Search = () => {
         value={searchValue}
         onChange={(event) => setSearchValue(event.target.value)}
         className="search-input"
-        placeholder="Search..."
-        type='search'
+        placeholder="    Search..."
+        type="search"
       />
-      
-      <button type="submit" className="Search-submit">
-        Искать
-      </button>
     </div>
   );
 };

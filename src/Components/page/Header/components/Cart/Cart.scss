@@ -1,17 +1,16 @@
 .cart {
-  position: fixed;
-  top: 150px;
-  right: 0;
-  
+ position: absolute;
+  top: 40px;
+  right: 320px;
+  z-index: 1000;
 
   .cart-icon {
     color: rgb(20, 20, 20);
-    font-size: 24px; 
-    
+    font-size: 24px;
+    z-index: 100px;
     &:hover {
-      color: red; 
+      color: red;
     }
-    
   }
 
   ul {

@@ -1,51 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    
-}
+.nav-container {
+  position: relative;
+  top: -83px;
 
-nav-container {
-    display:flex;
-    border-bottom: 2px solid #f3f3f3;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    z-index:999;
-    margin-left: 2rem;
-    position: relative;  //kurwabober
-    right: 200px;
-}
-
-input{
-    padding: 12px 10px;
-    border:none;
-    background: #f7f6f6;
-    outline: none;
-    margin-right: 10px;
-    margin-left: 10%;
-    border-radius: 5px;
-    position: relative;
-    width: 70%;
-    justify-content: center;
-    align-items: center;
-    left: 47px;
-}
-.Search-submit {
-    position: relative;
-    padding: 12px 20px;
-    background: #EA88AD;
-    font-size: 13px;
-    color: #fff;
+  .search-input {
+    position: absolute;
+    width: 269.263px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 15px;
     border: none;
-    border-radius: 5px;
-    border-color: #EA88AD;
-    cursor: pointer;
-    left: 50px;
-    
-}
-
-.search-input{
-    columns: hotpink;
+    left: 173px;
+    z-index: 100;
+  }
 }

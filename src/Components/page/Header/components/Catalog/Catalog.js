@@ -36,7 +36,7 @@ export const Catalog = () => {
 
   return (
     <div ref={menuRef} className="Wrapper-Catalog">
-      <IconContext.Provider value={{ color: 'hotpink' }}>
+      <IconContext.Provider value={{ color: 'black' }}>
         <div className="navbar">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
@@ -66,6 +66,7 @@ export const Catalog = () => {
             ))}
         </ul>
       </nav>
+      <div className='Countline'></div>
     </div>
   );
 };
