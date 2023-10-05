@@ -89,58 +89,14 @@ export const Footer = () => {
           </div>
         </div>
         <div className="СontainerOurContact">
-          <span className="Our contacts">
-            <strong>Наши контакты:</strong>
-          </span>
-          <div className="Phone">
-            <svg
-              fill="#000000"
-              width="20px"
-              height="20px"
-              viewBox="0 0 24 24"
-              id="phone"
-              data-name="Line Color"
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon line-color"
-            >
-              <path
-                id="primary"
-                d="M21,15v3.93a2,2,0,0,1-2.29,2A18,18,0,0,1,3.14,5.29,2,2,0,0,1,5.13,3H9a1,1,0,0,1,1,.89,10.74,10.74,0,0,0,1,3.78,1,1,0,0,1-.42,1.26l-.86.49a1,1,0,0,0-.33,1.46,14.08,14.08,0,0,0,3.69,3.69,1,1,0,0,0,1.46-.33l.49-.86A1,1,0,0,1,16.33,13a10.74,10.74,0,0,0,3.78,1A1,1,0,0,1,21,15Z"
-              ></path>
-            </svg>
-          </div>
-
+          <strong>Наши контакты:</strong>
           <div className="Telefon number">
             <a rel="nofollow" href="tel:+79964209691">
               +7 (996) 420-96-91
             </a>
           </div>
           <div className="email block">
-            <div className="email-block_wrapper">
-              <svg width="20px" height="20px" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {' '}
-                <path
-                  d="M0.5 4.5L7.5 8.5L14.5 4.5M1.5 1.5H13.5C14.0523 1.5 14.5 1.94772 14.5 2.5V12.5C14.5 13.0523 14.0523 13.5 13.5 13.5H1.5C0.947716 13.5 0.5 13.0523 0.5 12.5V2.5C0.5 1.94772 0.947715 1.5 1.5 1.5Z"
-                  stroke="#000000"
-                />
-              </svg>
-              <div className="work-time__text3">
-                <a href="mailto:goddezz88@mail.ru">store@greras.shops.ru</a>
-              </div>
-            </div>
-
-            <div className="address block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20px"
-                padding="10px"
-                height="20px"
-                viewBox="0 0 24 24"
-                id="location"
-              >
-                <path d="M12,2a8,8,0,0,0-8,8c0,5.4,7.05,11.5,7.35,11.76a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,17.65c-2.13-2-6-6.31-6-9.65a6,6,0,0,1,12,0C18,13.34,14.13,17.66,12,19.65ZM12,6a4,4,0,1,0,4,4A4,4,0,0,0,12,6Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,12Z"></path>
-              </svg>
-            </div>
+            <a href="mailto:goddezz88@mail.ru">store@greras.shops.ru</a>
             <div className="work-time__text1">
               г. Махачкала<br></br> ул. Коркмасова 14
               <br></br>
@@ -148,26 +104,8 @@ export const Footer = () => {
             </div>
           </div>
           <div className="work-time">
-            <div className="work-time__wrapper">
-              <svg
-                fill="#000000"
-                width="20px"
-                height="20px"
-                viewBox="0 0 24 24"
-                id="Layer_1"
-                data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M15.09814,12.63379,13,11.42285V7a1,1,0,0,0-2,0v5a.99985.99985,0,0,0,.5.86621l2.59814,1.5a1.00016,1.00016,0,1,0,1-1.73242ZM12,2A10,10,0,1,0,22,12,10.01114,10.01114,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.00917,8.00917,0,0,1,12,20Z" />
-              </svg>
-            </div>
-            <div className="work-time__text">
-              Пн.- Вс.
-              <br />
-              с 10:00 до 19:30
-              <br />
-              Без выходных
-            </div>
+            Пн.- Вс. с 10:00 до 
+            19:30 Без выходных
           </div>
         </div>
       </div>

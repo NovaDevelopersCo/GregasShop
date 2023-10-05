@@ -12,7 +12,6 @@ export const Products = () => {
   return (
     <>
       <Slider />
-      <hr className="grad" />
       <FotoButton />
       <hr className="grad" />
       <New />

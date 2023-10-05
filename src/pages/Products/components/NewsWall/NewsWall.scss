@@ -1,57 +1,144 @@
-
 .HitNewsWall {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    max-width: 1200px;
-    margin:  auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .NewsWallText {
-    font-size: 20px;
-    color: rgb(89, 88, 88);
-    font-weight: 2;
-    margin-bottom: 20px;
-    margin-left: 10px;
+  font-size: 20px;
+  color: rgb(89, 88, 88);
+  font-weight: 2;
+  margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .NewsWallPhotos {
-    display: flex;
-    margin-bottom: 20px;
-    margin-right: -60px;
+  display: flex;
+  margin-bottom: 20px;
+  margin-right: -60px;
 }
 
 .NewsWallPhotos img {
-    height: 350px;
-    border-radius: 10px;
-    margin-right: 30px; 
-    margin-bottom: 10px;
+  height: 350px;
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
 }
 
 .image-containerNewsWallOne,
 .image-containerNewsWallTwo,
 .image-containerNewsWallThree {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-top: 10px;
-    font-size: 20px;
-    word-wrap: break-word;
-    transition: color 0.3s;
-    margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 10px;
+  font-size: 20px;
+  word-wrap: break-word;
+  transition: color 0.3s;
+  margin-right: 20px;
 }
 
 .image-containerNewsWallOne:hover,
 .image-containerNewsWallTwo:hover,
 .image-containerNewsWallThree:hover {
-    color: red;
+  color: red;
 }
 
 .Date {
-    font-size: 14px;
-    text-align: left;
-    margin-top: 10px;
-    color: gray;
-    user-select: none;
-    margin-bottom: 10px;
+  font-size: 14px;
+  text-align: left;
+  margin-top: 10px;
+  color: gray;
+  user-select: none;
+  margin-bottom: 10px;
+}
+@media (max-width: 1600px) {
+  .HitNewsWall {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: auto; /* Центрируем блоки по горизонтали */
+    margin-right: auto;
+    width: 100%; /* Занимают 50% ширины родительского контейнера */
+  }
+}
+@media (max-width: 1366px) {
+  .HitNewsWall,
+  .NewsWallPhotos,
+  .image-containerNewsWallOne,
+  .image-containerNewsWallTwo,
+  .image-containerNewsWallThree,
+  .NewsWallText {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: auto; /* Центрируем блоки по горизонтали */
+    margin-right: auto;
+    width: 85%; /* Занимают 50% ширины родительского контейнера */
+    font-size: 16px;
+  }
+  .NewsWallPhotos img {
+    width: 370px;
+    height: 370px;
+  }
+}
+@media (max-width: 1024px) {
+  .HitNewsWall,
+  .NewsWallPhotos,
+  .image-containerNewsWallOne,
+  .image-containerNewsWallTwo,
+  .image-containerNewsWallThree,
+  .NewsWallText {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: auto; /* Центрируем блоки по горизонтали */
+    margin-right: auto;
+    width: 85%; /* Занимают 50% ширины родительского контейнера */
+    font-size: 16px;
+  }
+  .NewsWallPhotos img {
+    width: 370px;
+    height: 370px;
+  }
+}
+@media (max-width: 768px) {
+  .HitNewsWall,
+  .NewsWallPhotos,
+  .image-containerNewsWallOne,
+  .image-containerNewsWallTwo,
+  .image-containerNewsWallThree {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 20%; /* Центрируем блоки по горизонтали */
+    width: 75%; /* Занимают 50% ширины родительского контейнера */
+  }
+  .NewsWallText {
+    margin-left: 405px;
+  }
+}
+@media (max-width: 425px) {
+  .HitNewsWall {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 40%; /* Центрируем блоки по горизонтали */
+    width: 20%; /* Занимают 50% ширины родительского контейнера */
+  }
+  .NewsWallText {
+    margin-left: 285px;
+  }
+}
+@media (max-width: 375px) {
+  .HitNewsWall {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 41%; /* Центрируем блоки по горизонтали */
+    width: 20%; /* Занимают 50% ширины родительского контейнера */
+  }
+  .NewsWallText {
+    margin-left: 285px;
+  }
+}
+@media (max-width: 320px) {
+  .HitNewsWall {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 41%; /* Центрируем блоки по горизонтали */
+    width: 20%; /* Занимают 50% ширины родительского контейнера */
+  }
+  .NewsWallText {
+    margin-left: 285px;
+  }
 }
