@@ -42,8 +42,10 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
-    "webpack-cli": "^5.1.4",
+<<<<<<< HEAD
+=======
     "webpack": "^5.88.2",
+>>>>>>> main
     "webpack-cli": "^5.1.4"
   }
 }
