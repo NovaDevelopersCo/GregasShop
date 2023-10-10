@@ -1,0 +1,15 @@
+.nav-container {
+  position: relative;
+  top: -83px;
+
+  .search-input {
+    position: absolute;
+    width: 269.263px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: none;
+    left: 173px;
+    z-index: 100;
+  }
+}

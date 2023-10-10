@@ -1,0 +1,152 @@
+.HitNewsWall {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1242px;
+  height: 472px;
+  flex-shrink: 0;
+}
+
+.NewsWallText {
+  color: #000;
+font-family: Inter;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding-left: 40px;
+  width: 1231px;
+  height: 64.5px;
+  flex-shrink: 0;
+}
+
+.NewsWallPhotos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.NewsWallPhotos img {
+  width: 370px;
+  height: 370px;
+  border-radius: 25px;
+}
+
+.image-containerNewsWallOne,
+.image-containerNewsWallTwo,
+.image-containerNewsWallThree {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-containerNewsWallOne:hover,
+.image-containerNewsWallTwo:hover,
+.image-containerNewsWallThree:hover {
+  color: red;
+}
+
+.Date {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+.p{
+  color: #000;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+// @media (max-width: 1600px) {
+//   .HitNewsWall {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: auto; /* Центрируем блоки по горизонтали */
+//     margin-right: auto;
+//     width: 100%; /* Занимают 50% ширины родительского контейнера */
+//   }
+// }
+// @media (max-width: 1366px) {
+//   .HitNewsWall,
+//   .NewsWallPhotos,
+//   .image-containerNewsWallOne,
+//   .image-containerNewsWallTwo,
+//   .image-containerNewsWallThree,
+//   .NewsWallText {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: auto; /* Центрируем блоки по горизонтали */
+//     margin-right: auto;
+//     width: 85%; /* Занимают 50% ширины родительского контейнера */
+//     font-size: 16px;
+//   }
+//   .NewsWallPhotos img {
+//     width: 370px;
+//     height: 370px;
+//   }
+// }
+// @media (max-width: 1024px) {
+//   .HitNewsWall,
+//   .NewsWallPhotos,
+//   .image-containerNewsWallOne,
+//   .image-containerNewsWallTwo,
+//   .image-containerNewsWallThree,
+//   .NewsWallText {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: auto; /* Центрируем блоки по горизонтали */
+//     margin-right: auto;
+//     width: 85%; /* Занимают 50% ширины родительского контейнера */
+//     font-size: 16px;
+//   }
+//   .NewsWallPhotos img {
+//     width: 370px;
+//     height: 370px;
+//   }
+// }
+// @media (max-width: 768px) {
+//   .HitNewsWall,
+//   .NewsWallPhotos,
+//   .image-containerNewsWallOne,
+//   .image-containerNewsWallTwo,
+//   .image-containerNewsWallThree {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 20%; /* Центрируем блоки по горизонтали */
+//     width: 75%; /* Занимают 50% ширины родительского контейнера */
+//   }
+//   .NewsWallText {
+//     margin-left: 405px;
+//   }
+// }
+// @media (max-width: 425px) {
+//   .HitNewsWall {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 40%; /* Центрируем блоки по горизонтали */
+//     width: 20%; /* Занимают 50% ширины родительского контейнера */
+//   }
+//   .NewsWallText {
+//     margin-left: 285px;
+//   }
+// }
+// @media (max-width: 375px) {
+//   .HitNewsWall {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 41%; /* Центрируем блоки по горизонтали */
+//     width: 20%; /* Занимают 50% ширины родительского контейнера */
+//   }
+//   .NewsWallText {
+//     margin-left: 285px;
+//   }
+// }
+// @media (max-width: 320px) {
+//   .HitNewsWall {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 41%; /* Центрируем блоки по горизонтали */
+//     width: 20%; /* Занимают 50% ширины родительского контейнера */
+//   }
+//   .NewsWallText {
+//     margin-left: 285px;
+//   }
+// }

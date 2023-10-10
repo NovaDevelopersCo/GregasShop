@@ -1,0 +1,35 @@
+
+.swiper {
+  width: 1230px;
+  height:486px;
+
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-next{
+  color: hotpink;
+}
+.swiper-button-prev{
+  color: hotpink;
+}
+.swiper-pagination-bullet-active{
+  background-color: hotpink;
+}
+
+.swiper-slide img {
+  background-color: rgb(255, 255, 255);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

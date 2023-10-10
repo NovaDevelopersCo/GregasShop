@@ -6,8 +6,13 @@ body {
 
 .container5 {
   display: flex;
+<<<<<<< HEAD
   text-align: center;
   justify-content: center;
+=======
+  text-align: justify;
+  justify-content: space-around;
+>>>>>>> develop-branch
   flex-direction: column;
   max-width: 1158px;
   height: 1027px;
@@ -32,14 +37,78 @@ body {
 .description {
   font-size: 24px;
   color: #000;
+<<<<<<< HEAD
   overflow: auto;
   text-align: justify;
   display: block;
   font: "Open Sans", Arial, sans-serif;
+=======
+  justify-content: space-around;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+>>>>>>> develop-branch
 }
 
-hr.grad {
-  border: none; 
-  background: linear-gradient(to right, rgb(208, 55, 228), rgb(224, 40, 40) 90%);
-  height: 1px;
+@media (max-width: 1600px) {
+  .container5,
+  body {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: auto; /* Центрируем блоки по горизонтали */
+    margin-right: auto;
+    width: 100%; /* Занимают 50% ширины родительского контейнера */
+  }
+}
+@media (max-width: 1366px) {
+  .container5,
+  body {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: auto; /* Центрируем блоки по горизонтали */
+    margin-right: auto;
+    width: 80%; /* Занимают 50% ширины родительского контейнера */
+  }
+}
+@media (max-width: 1024px) {
+  .container5,
+  body {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 12%; /* Центрируем блоки по горизонтали */
+    margin-right: 50%;
+    width: 80%; /* Занимают 50% ширины родительского контейнера */
+  }
+}
+@media (max-width: 768px) {
+  .container5,
+  body {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 27%; /* Центрируем блоки по горизонтали */
+    margin-right: 50%;
+    width: 60%; /* Занимают 50% ширины родительского контейнера */
+  }
+}
+@media (max-width: 425px) {
+  .container5,
+  body {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 40%; /* Центрируем блоки по горизонтали */
+    margin-right: 30%;
+    width: 50%; /* Занимают 50% ширины родительского контейнера */
+  }
+}
+@media (max-width: 320px) {
+  .container5,
+  body {
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    margin-left: 41%; /* Центрируем блоки по горизонтали */
+    margin-right: 50%;
+    width: 50%; /* Занимают 50% ширины родительского контейнера */
+  }
 }
