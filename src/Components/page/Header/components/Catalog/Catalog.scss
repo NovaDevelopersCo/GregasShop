@@ -10,7 +10,7 @@
   top: -105px;
   left: 450px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -48,7 +48,7 @@
 
 .nav-text {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   list-style: none;
   height: 60px;
