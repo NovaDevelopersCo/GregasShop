@@ -12,7 +12,7 @@
 
 
 .MainLogo {
-  position: absolute;
+  position: relative;
 
   img {
     width: 94px;
@@ -70,3 +70,134 @@
     color: #161a1d;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .MainWrapper {
+   width: 1021px;
+   margin-left: 90px; 
+  }
+  .MainLogo{
+    img {
+      width: 80px;
+      height: 70px;
+      flex-shrink: 0;
+      position: absolute;
+      left: 20px;
+      top: 16px;
+    }
+    svg {
+      width: 90px;
+      height: 90px;
+      position: absolute;
+      left: 15px;
+      top: 9.5px;
+      
+    }
+  }
+  .MenuWrapper{
+   margin-right: 325px;
+   margin-left: 510px;
+   
+   li{
+    width: 90px;
+    height: 42px;
+    font-size: 16px;
+   }
+   a{
+    position: absolute;
+      height: 22px;
+      margin-left: -70px;
+      margin-top: -4px;
+   }
+   span{
+    margin-top: 3px;
+    height: 21px;
+   }
+  }
+}
+@media screen and (max-width: 768px) {
+  .MainWrapper {
+   width: 766px;
+   margin-left: 184px; 
+   
+  }
+  .MainLogo{
+    img {
+      width: 60px;
+      height: 75px;
+      left: 25px;
+      top: 18px;
+    }
+    svg {
+      width: 80px;
+      height: 80px;
+      left: 15px;
+      top: 19px;
+      
+    }
+  }
+  .MenuWrapper{
+   margin-right: 190px;
+   margin-left: 410px;
+   
+   li{
+    width: 80px;
+    height: 45px;
+    font-size: 12px;
+   }
+   a{
+    position: absolute;
+      height: 5px;
+      margin-left: -5px;
+      margin-top: -1px;
+   }
+   span{
+    margin-top: 3px;
+    height: 21px;
+   }
+  }
+}
+
+@media screen and (max-width: 389px) {
+  .MainWrapper {
+   width: 385px;
+   margin-left: 370px; 
+   height:  61px;
+  
+  }
+  .MainLogo{
+    img {
+      width: 47px;
+      height: 38px;   
+      left: 6px;
+      top: 10px;
+    }
+    svg {
+      width: 50px;
+      height: 80px;
+      position: absolute;
+      left: 5px;
+      top: -10px;
+      
+    }
+  }
+    .MenuWrapper{
+   left: -199px;
+   li{
+    width: 50px;
+    height: 17px;
+    
+    margin: -15px 9px 0 0;
+    font-size: 6px;
+   }
+   a{
+      margin-top: -12px;
+      width: 10px;
+      height: 10px;
+
+   }
+  
+   
+  }
+}
+

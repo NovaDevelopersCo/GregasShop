@@ -5,7 +5,7 @@ position: relative;
 .cart {
   position: absolute;
   display: flex;
-  right: 320px;
+  right: 3200px;
   z-index: 1000;
   right: 20px;
   top: 40px;
@@ -25,6 +25,50 @@ position: relative;
 
     li {
       margin-bottom: 0px;
+      
     }
   }
 }
+
+@media screen and (max-width: 1024px){
+  .WrapperCart{
+    position: relative;
+   p{
+       margin-bottom: 0px;
+   }
+    .cart {
+      right: 205px;
+      cart-icon {
+        color: rgb(20, 20, 20);
+        font-size: 12px;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+      ul {
+        top: 30px;
+      }
+    }
+    
+  }
+
+  @media screen and (max-width: 389px) {
+    .WrapperCart{
+     
+      
+      .cart {
+     right: 489px;
+     top: 14px;
+     font-size: 12px;
+        .cart-icon {
+          
+          &:hover {
+           
+          }
+        }
+      }
+     
+        
+      }
+  }

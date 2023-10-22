@@ -185,3 +185,30 @@ a:hover {
   height: 68vh; /* Set the height to the expanded value */
   display: block;
 }
+
+
+@media screen and (max-width: 1024px){
+  .BarsIcon {
+    margin-top: -40px;
+  }
+  .Countline{
+
+  top: -113px;
+  left: 518px;
+  width: 1px;
+  height: 113px;
+  background-color: rgb(255, 255, 255);
+  }
+}
+
+@media screen and (max-width: 389px){
+  .BarsIcon {
+    margin-top: 45px;
+    height: 24px;
+    width: 26px;
+    margin-left: -16px;
+  }
+  .Countline {
+    display: none;
+  }
+}

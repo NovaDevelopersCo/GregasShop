@@ -30,3 +30,36 @@
     }
   
 }
+@media screen and (max-width: 1024px){
+  .nav-container{
+    .search-input{
+      width: 190px;
+      left: 210px;
+    }
+  }
+  .clearIcon{
+    
+  }
+}
+@media screen and (max-width: 768px){
+  .nav-container{
+    .search-input{
+      width: 140px;
+      left: 290px;
+      height: 40px;
+      top: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 389px){
+  .nav-container{
+    .search-input{
+      display: none;
+      
+    }
+  }
+  .clearIcon{
+
+  }
+}
