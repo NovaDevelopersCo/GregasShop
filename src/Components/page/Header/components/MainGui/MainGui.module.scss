@@ -1,13 +1,15 @@
-
 .MainWrapper {
   justify-content: center;
-  width: 1240px;
+  width: 1242px;
   height: 113px;
   flex-shrink: 0;
   border-radius: 0px 0px 20px 20px;
   background: #a4161a;
   position: relative;
   align-items: center;
+
+}
+
 
 .MainLogo {
   position: absolute;
@@ -67,5 +69,4 @@
   li a:hover {
     color: #161a1d;
   }
-}
 }

@@ -11,6 +11,7 @@ import { Collection } from './pages/Collection/Collection';
 import { Information } from './pages/Information/Information';
 import { Cartpage } from './pages/Cartpage/Cartpage';
 import { Personalacc } from './pages/Personalacc/Personalacc';
+import { CatalogPage } from './pages/CatalogPage/CatalogPage';
 
 export const routes = [
   {
@@ -56,6 +57,10 @@ export const routes = [
       {
         path: 'catalog',
         element: <Products />,
+      },
+      {
+        path: 'catalogpage',
+        element: <CatalogPage />,
       },
       {
         path: 'product/:productId/:title/:price/:image/:id',

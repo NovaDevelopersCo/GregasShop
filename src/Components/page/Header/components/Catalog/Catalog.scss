@@ -5,13 +5,18 @@
 
 .navbar {
   position: absolute;
-  height: 20px;
-  width: 20px;
-  top: -67px;
-  left: 430px;
+  height: 104px;
+  width: 60px;
+  top: -105px;
+  left: 450px;
   display: flex;
   justify-content: start;
   align-items: center;
+}
+
+.BarsIcon {
+  height: 30px;
+  width: 45.71px;
 }
 
 .menu-bars {
@@ -26,12 +31,12 @@
   border-radius: 12px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   width: 360px;
-  height: 0; /* Изменено на 0, чтобы начать с нулевой высоты */
+  height: 0px; /* Изменено на 0, чтобы начать с нулевой высоты */
   display: none; /* Изменено на display: none; */
   justify-content: center;
   position: absolute;
-  top: 20px;
-  left: 5px; /* Изменено на 0 */
+  top: 0px;
+  left: 0px; /* Изменено на 0 */
   z-index: 3;
   transition: height 0.3s ease-in-out; /* Добавлена анимация для height */
 }
@@ -82,28 +87,27 @@ span:hover {
 
 .title-Category {
   position: absolute;
-  left: 150px;
+  left: 150px;  
   width: 835px;
-  height: 0; /* Изменено на 0, чтобы начать с нулевой высоты */
+  height: 0vh; /* Изменено на 0, чтобы начать с нулевой высоты */
   background-color: rgb(252, 252, 252);
   color: black;
   z-index: 2;
-  border-radius: 12px;
-  border: 2px solid rgb(0, 0, 0);
-  left: 5px; /* Изменено на 0 */
-  top: 20px;
+  left: -5px; /* Изменено на 0 */
   padding-left: 400px;
-  margin-left: 10px;
+  margin-left: 5px;
   padding-top: 30px;
   font-size: 17px;
   line-height: 2px;
   display: none; /* Изменено на display: none; */
-  transition: height 0.3s ease-in-out; /* Добавлена анимация для height */
+  // transition: height 0.3s ease-in-out; /* Добавлена анимация для height */
 }
 
 .title-Category.active {
-  height: 65vh; /* Изменено высота для активного состояния */
+  height: 100vh; /* Изменено высота для активного состояния */
   display: block; /* Изменено на display: block; */
+  border-radius: 12px;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .subcategories {
@@ -144,3 +148,40 @@ a:hover {
   background-color: rgb(255, 255, 255);
 }
 
+
+.subcategories:hover {
+  cursor: pointer;
+  color: hotpink;
+}
+
+.nav-menu {
+  /* ... other CSS properties ... */
+  height: 0;
+  transition: height 0.3s ease-in-out; /* Add transition property */
+}
+
+.nav-menu.active {
+  height: 68vh;
+  /* ... other CSS properties ... */
+}
+
+.title-Category {
+  /* ... other CSS properties ... */
+  height: 0;
+  transition: height 0.3s ease-in-out; /* Add transition property */
+}
+
+.title-Category.active {
+  height: 68vh;
+  /* ... other CSS properties ... */
+}
+
+.menu-bars:hover + .nav-menu {
+  height: 68vh; /* Set the height to the expanded value */
+  display: block;
+}
+
+.menu-bars:hover + .nav-menu + .title-Category {
+  height: 68vh; /* Set the height to the expanded value */
+  display: block;
+}
