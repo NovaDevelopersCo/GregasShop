@@ -45,3 +45,48 @@ body {
     color: black;
   }
   
+  @media (max-width: 460px)
+  {
+    .fotoItem {
+      margin-top: 6px;
+      width: 61px;
+      height: 55px;
+    }
+    .fotoItem img {
+      width: 61px;
+      height: 55px;
+    }
+    .Foto p {
+      display: none;
+    }
+  }
+  @media (max-width: 780px) and (min-width: 540px)
+  {
+    .fotoItem { 
+      margin-top: 6px;
+      width: 130px;
+      height: 100px;   
+  }
+    .fotoItem img {
+      width: 125px;
+      height: 100px;
+  }
+    .Foto p {
+      display: none;
+    }
+} 
+  @media (min-width: 820px)
+  {
+    .fotoItem { 
+      margin-top: 6px;
+      width: 100px;
+      height: 90px;   
+  }
+    .fotoItem img {
+      width: 110px;
+      height: 95px;
+  }
+    .Foto p {
+      display: none;
+    }
+}
