@@ -1,33 +1,40 @@
-/* ItemBlock.scss */
+.collection-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1230px;
+  margin: 0 auto;
+}
 
 .ItemBlock {
-  display: grid;
-  grid-template-columns: repeat(
-    minmax(300px, 4fr)
-  ); /* Автоматическое распределение карточек по горизонтали */
-  gap: 20px; /* Расстояние между карточками */
+  flex-basis: calc(25% - 20px); /* 25% minus 20px margin to achieve 4 items per row */
+  display: flex;
+  flex-direction: column;
   border-radius: 12px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   background: #fff;
   transition: transform 0.2s, box-shadow 0.2s;
-  overflow: hidden;
-  margin: 20px;
+  height: 450px;
+  width: 280px;
+  margin: 5px;
 }
 
 .ItemBlock:hover {
-  transform: translateY(-8px); /* Увеличиваем смещение при наведении */
-  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3); /* Увеличиваем тень при наведении */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
 }
+
 .NewPhotos {
   display: flex;
-  margin: 0;
   justify-content: center;
 }
 
 .Item-container {
-  padding: 14px;
+  position: relative;
   border-radius: 30px;
+  top: -20px;
+  padding: 10px;
 }
 
 .image-container {
@@ -86,20 +93,15 @@
 }
 
 .expand-details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
+  position: relative;
+  margin-top: 10px;
   background-color: red;
   text-align: center;
   opacity: 0;
   transition: height 0.3s, opacity 0.3s;
-  z-index: 2;
-  overflow: hidden;
 }
 
-.Item-container:hover .expand-details {
+.ItemBlock:hover .expand-details {
   height: 30px;
   opacity: 1;
 }
@@ -109,10 +111,9 @@
   color: white;
   cursor: pointer;
   background-color: red;
-  z-index: 3;
   text-decoration: none;
 }
 
-.Rating{
+.Rating {
   color: rgb(31, 214, 31);
 }

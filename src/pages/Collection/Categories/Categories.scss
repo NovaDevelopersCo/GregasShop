@@ -1,25 +1,30 @@
 .categories {
+  display: flex;
   ul {
     list-style: none;
     padding: 0;
     display: flex;
+    justify-content: flex-start;
+    margin-right: 550px;
   }
 
   li {
-    width: 150px;
+    width: 90px;
     padding: 5px 10px;
     border: 1px solid #ccc;
     cursor: pointer;
     background-color: rgb(255, 255, 255);
     color: #000000;
-    border-radius: 5px;
+    border-radius: 12px;
     text-align: center;
-    margin: 30px 13px 30px 15px;
+    margin: 0 10px 0 10px;
+  
   }
 
   li.active {
-    background-color: hotpink;
+    background-color: #A4161A;
     color: #fff;
-    border-radius: 5px;
-  }
+    border-radius: 12px;
+
+  } 
 }

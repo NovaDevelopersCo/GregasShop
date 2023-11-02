@@ -1,10 +1,12 @@
-$orange:hotpink;
+$orange:#ce191f;
 .sort {
     position: relative;
+    right: -470px;
+    top: -35px;
     &__label {
       display: flex;
       align-items: center;
-  
+      
       svg {
         margin-right: 8px;
       }
