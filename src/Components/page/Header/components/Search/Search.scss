@@ -30,3 +30,47 @@
     }
   
 }
+@media screen and (max-width: 1024px)and (min-width: 900px){
+  .nav-container{
+    .search-input{
+      width: 190px;
+      left: 210px;
+    }
+  }
+  .clearIcon{
+    
+  }
+}
+@media screen and (max-width: 768px)and (min-width: 500px){
+  .nav-container{
+    .search-input{
+      width: 140px;
+      left: 290px;
+      height: 40px;
+      top: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px)and (min-width: 500px){
+  .nav-container{
+    .search-input{
+      width: 120px;
+      left: 310px;
+      height: 40px;
+      top: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px)and (min-width: 200px){
+  .nav-container{
+    .search-input{
+      display: none;
+      
+    }
+  }
+  .clearIcon{
+
+  }
+}

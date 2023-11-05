@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import qs from 'qs';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId, setCurrentPage, setFilters } from '../../redux/slices/filterSlice';
@@ -11,6 +10,7 @@ import { Sort, list } from './Sort/Sort';
 import Skeleton from './Skeleton/Skeleton';
 import { useSearch } from '../../hooks/context/SearchContext';
 import { Pagination } from '../Products/components/Pagination';
+import { fetchItems } from '../../redux/slices/itemSlice';
 
 export const Collection = () => {
   const navigate = useNavigate();
@@ -19,10 +19,9 @@ export const Collection = () => {
   const isSearch = React.useRef(false);
 
   const { categoryId, sort, currentPage } = useSelector((state) => state.filterSlice);
+  const { items, status } = useSelector((state) => state.itemSlice);
 
   const sortType = sort.sortProperty;
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const { searchValue } = useSearch();
 
   const onChangeCategory = (id) => {
@@ -33,24 +32,22 @@ export const Collection = () => {
     dispatch(setCurrentPage(number));
   };
 
-  const fetchProducts = () => {
-    setIsLoading(true);
-
+  const fetchProducts = async () => {
     const order = sortType.includes('-') ? 'asc' : 'desc';
     const SortBy = sortType.replace('-', '');
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const search = searchValue ? `&search=${searchValue}` : '';
 
-    axios
-      .get(
-        `https://650c60bf47af3fd22f678d4b.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${SortBy}&order=${order}${search}`
-      )
-      .then((res) => {
-        setItems(res.data);
-        setIsLoading(false);
-      });
+    dispatch(
+      fetchItems({
+        order,
+        SortBy,
+        category,
+        search,
+        currentPage,
+      })
+    );
   };
-
 
   // Если был первый рендер , то проверяем URL-параметр и сохраняем в Redux
   useEffect(() => {
@@ -68,7 +65,7 @@ export const Collection = () => {
       isSearch.current = true;
     }
   }, []);
-// Если был первый рендер, то запрашиваем пиццы
+  // Если был первый рендер, то запрашиваем пиццы
   useEffect(() => {
     window.scrollTo(0, 0);
     if (!isSearch.current) {
@@ -76,7 +73,7 @@ export const Collection = () => {
     }
     isSearch.current = false;
   }, [categoryId, sortType, searchValue, currentPage]);
-// Если изменили параметры и был первый рендер
+  // Если изменили параметры и был первый рендер
   useEffect(() => {
     if (isMounted.current) {
       const queryString = qs.stringify({
@@ -96,7 +93,16 @@ export const Collection = () => {
     <div className="collection-container">
       <Categories value={categoryId} onClickCategories={onChangeCategory} />
       <Sort></Sort>
-      <div className="product-list">{isLoading ? Skeletons : products}</div>
+      {status === 'error' ? (
+        <div className='error-alert'>
+          <h1>Произошла ошибка!</h1>
+          <h2>К сожалению, не удалось получить товары...</h2>
+          <h2>Попробуйте повторить попытку позже!</h2>
+        </div>
+      ) : (
+        <div className="product-list">{status === 'loading' ? Skeletons : products}</div>
+      )}
+
       <Pagination currentPage={currentPage} onChangePage={onChangePage}></Pagination>
     </div>
   );

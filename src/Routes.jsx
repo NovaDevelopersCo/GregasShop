@@ -9,7 +9,10 @@ import { Cargo } from './pages/Cargo/Cargo';
 import { Product } from './pages/Product/Product';
 import { Collection } from './pages/Collection/Collection';
 import { Information } from './pages/Information/Information';
+import { Cartpage } from './pages/Cartpage/Cartpage';
+import { Personalacc } from './pages/Personalacc/Personalacc';
 import { CatalogPage } from './pages/CatalogPage/CatalogPage';
+
 export const routes = [
   {
     path: '',
@@ -66,6 +69,14 @@ export const routes = [
       {
         path: 'information',
         element: <Information />,
+      },
+      {
+        path:'cartpage',
+        element: <Cartpage />
+      },
+      {
+        path:'personalacc',
+        element: <Personalacc />
       },
     ],
   },

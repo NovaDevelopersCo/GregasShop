@@ -86,10 +86,19 @@
 }
 
 .Price {
+  position: relative;
   margin-top: 10px;
   font-size: 18px;
   font-weight: bold;
   color: black;
+
+  .ScoreBtn {
+    position: absolute;
+    top: -10px;
+    left: 195px;
+    height: 35px;
+
+  }
 }
 
 .expand-details {
@@ -116,4 +125,12 @@
 
 .Rating {
   color: rgb(31, 214, 31);
+}
+.addtoButton {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-top: 402px;
+  margin-left: 230px;
 }

@@ -14,3 +14,14 @@
     margin: 0 auto; /* Центрирование по горизонтали */
     padding: 30px 20px; /* Левый и правый отступы */
   }
+  
+.error-alert {
+  margin: 60px 0 60px 0;
+  width: 580px;
+  h1{
+    color: red;
+  }
+  h2{
+    text-align: center;
+  }
+}

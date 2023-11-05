@@ -1,103 +1,37 @@
 import React from 'react';
 import './CatalogPage.scss';
+import { CatalogData } from './CatalogData';
+import { Subcategories } from './SubCategories';
+import { Link } from 'react-router-dom';
 
 export const CatalogPage = () => {
+  const subcategoryStart = [0,6,11,14,15,25,26]; // Создаем массив, который содержит количество подкатегорий для каждой категории
+  const subcategoryCounts = [6,11,14,23,25,30]; // Замените на фактические значения
+
+
   return (
     <div>
       <h2>Каталог</h2>
       <p className="BreadCrumbs"> Главная - Каталог </p>
       <br></br>
       <div className="CategoryBoxWrapper">
-        <div className="CategoryBox">
-          <section>
-            <div className="InnerCategoryBox">
-              <h5> Азиатская Еда и Напитки </h5>
+        {CatalogData.map((obj, index) => {
+          const subcategories = Subcategories.slice(subcategoryStart[index], subcategoryCounts[index]);
+          return (
+            <div className="CategoryBox" key={index}>
+              <section>
+                <div className="InnerCategoryBox">
+                  <h5>{obj.title}</h5>
+                </div>
+              </section>
+              <section>
+                {subcategories.map((subtitle, subIndex) => (
+                  <Link to={`/Catalog/${subtitle}`} key={subIndex} className="CategoryBoxItems">{subtitle}</Link>
+                ))}
+              </section>
             </div>
-          </section>
-          <section>
-            <p className="CategoryBoxItems">Лапша</p>
-            <p className="CategoryBoxItems">Напитки</p>
-            <p className="CategoryBoxItems">Снэки</p>
-            <p className="CategoryBoxItems">Сладости (игори)</p>
-            <p className="CategoryBoxItems">Соусы и приправы</p>
-            <p className="CategoryBoxItems">Токпоки</p>
-          </section>
-        </div>
-
-          <div className="CategoryBox">
-            <section>
-              <div className="InnerCategoryBox">
-                <h5> Игры, Фильмы, Аниме </h5>
-              </div>
-            </section>
-            <section>
-              <p className="CategoryBoxItems">Genshit Impact</p>
-              <p className="CategoryBoxItems">Harry Potter</p>
-              <p className="CategoryBoxItems">Аниме</p>
-            </section>
-          </div>
-
-          <div className="CategoryBox">
-            <section>
-              <div className="InnerCategoryBox">
-                <h5> Канцелярия </h5>
-              </div>
-            </section>
-            <section>
-              <p className="CategoryBoxItems">Блокноты и Тетради</p>
-              <p className="CategoryBoxItems">Наклейки и Стикеры</p>
-              <p className="CategoryBoxItems">Подарочная упаковка</p>
-              <p className="CategoryBoxItems">Канцтовары</p>
-              <p className="CategoryBoxItems">Печатная Продукция</p>
-            </section>
-          </div> 
-
-          <div className="CategoryBox">
-            <section>
-              <div className="InnerCategoryBox">
-                <h5> Приколы </h5>
-              </div>
-            </section>
-            <section>
-              <p className="CategoryBoxItems">Кружки</p>
-              <p className="CategoryBoxItems">Коробки</p>
-              <p className="CategoryBoxItems">Пакеты</p>
-              <p className="CategoryBoxItems">Сладости</p>
-              <p className="CategoryBoxItems">Открытки</p>
-              <p className="CategoryBoxItems">Антистрессы</p>
-              <p className="CategoryBoxItems">Значки</p>
-              <p className="CategoryBoxItems">Обложки</p>
-            </section>
-          </div>
-          
-          <div className="CategoryBox">
-            <section>
-              <div className="InnerCategoryBox">
-                <h5> Козметика Из Азии </h5>
-              </div>
-            </section>
-            <section>
-              <p className="CategoryBoxItems">Уход</p>
-              <p className="CategoryBoxItems">Декоративная Косметика</p>
-            </section>
-          </div>
-
-        <div className="CategoryBox">
-          <section>
-            <div className="InnerCategoryBox">
-              <h5> Бижутерия </h5>
-            </div>
-          </section>
-          <section>
-            <p className="CategoryBoxItems">Серьги</p>
-            <p className="CategoryBoxItems">Колье И Подвески</p>
-            <p className="CategoryBoxItems">Кольца</p>
-            <p className="CategoryBoxItems">Браслеты</p>
-            <p className="CategoryBoxItems">Аксессуары</p>
-          </section>
-
-
-        </div>
+          );
+        })}
       </div>
     </div>
   );
