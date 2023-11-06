@@ -1,0 +1,49 @@
+.CategoryBoxWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1242px;
+}
+
+.CategoryBox {
+    border: 2px solid #000000;
+    padding: 10px;
+    width: 350px;
+    height: 580px;
+    margin: 0 30px 20px 10px;
+    border-radius: 20px;
+}
+
+
+.InnerCategoryBox {
+    border: 2px;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    margin: -10px;
+    background-color: #D9D9D9;
+}
+
+.BreadCrumbs {
+    color: #B1A7A6;
+    margin-top: -30px;
+}
+
+.CategoryBoxItems {
+    top:10px;
+    right:-20px;
+    margin-top: 25px;
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+h5 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 100;
+}

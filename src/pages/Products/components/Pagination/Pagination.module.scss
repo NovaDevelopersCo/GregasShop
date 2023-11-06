@@ -1,0 +1,46 @@
+.root {   
+    li { 
+    list-style: none;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    line-height: 38px;
+    flex-direction: row;
+    margin: 0 5px 0 5px;
+    
+    a {
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+    }
+}
+    
+    :global {
+        .previous{
+            background-color: #161a1d;
+            color:#ffffff;
+            a{
+                color:#ffffff;
+            }
+        } 
+        .next{
+            background-color: #161a1d;
+            color:#ffffff;
+            a{
+                color:#ffffff;
+            }
+        } 
+
+        .selected {
+            background-color: #a4161a;
+            color:#ffffff;
+            a{
+                color:#ffffff;
+            }
+        }
+    }
+}

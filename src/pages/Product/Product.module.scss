@@ -1,0 +1,127 @@
+h3 {
+  text-align: left;
+  font-size: 50px;
+  font-weight: 100;
+}
+.TitleBox {
+  margin: 20px;
+  margin-left: 120px;
+}
+.ProductBox {
+  padding: 10px;
+  width: 975px;
+  height: 550px;
+  margin-left: 123px;
+  border-radius:10px;
+  border-top: 25px solid #991b1b;
+  background-color: #f8fafc;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.ProductImage {
+  height: 300px;
+  width: 300px;
+  margin-left: 40px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .2);
+}
+.PriceBox{
+  height: 80px;
+  width: 285px;
+  background-color: white;
+  margin-left: 660px;
+  margin-top: -320px;
+  border-radius: 10px;
+  line-height: 40px;
+  box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.2);
+  .PriceTag{
+    font-size: 1.3rem;
+    margin-left: 45px;
+    margin-top: 5px;
+    .price{
+      word-spacing: -3px;
+    }
+  }
+  .OrderDate{
+    margin-left: 18px;
+    margin-top: 5px;
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-top:-10px
+  }
+}
+.addButton{
+  display:flex;
+  align-items: center;
+  margin-top: -50px;
+  font-family: 'Quicksand', sans-serif;
+  
+  .addtocart {
+    border-radius: 10px;
+    font-size: 12px;
+    background: #0652dd;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    overflow: hidden;
+    transition: transform 0.1s;
+    z-index: 1;
+    margin-left: 130px;
+    text-align: center;
+    box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, .2);
+    position: relative;
+    color: #fff;
+    border:none;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .MinusCart{
+    background-color: #0652dd;
+    height:30px;
+    width: 30px;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #fff;
+    font-size:20px;
+    display: flex;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;
+    cursor: pointer;  
+    border:none;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+    &:hover{
+      transform: scale(1.1);
+      
+    }
+  } 
+}
+.ProductDetails {
+  display: block;
+  margin-left: 660px;
+  line-height: 30px;
+  background-color:white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.2);
+  height: 280px;
+  width: 285px;
+  .ProductDetailsList{
+    border-bottom: 1px solid #991b1b;
+  .ProductDetailsItem{
+    margin-left: 10px;
+  }
+  }
+  .Sales{
+    margin-top:10px ;
+    margin-left: 10px;
+  }
+}
+
+.Description{
+  line-height: 22px;
+  height: 100px;
+  width: 340px;
+  margin-top: -50px;
+  margin-left:45px
+}
+

@@ -1,0 +1,159 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  .Top{
+    
+    .title {
+      font-size: 30px;
+      margin-left: 10px;
+     
+    }
+    .back{
+      font-size: 20px;
+      margin-left: 900px;
+      background-color: #d43447;
+      padding: 5px;
+      border-radius: 5px;
+      color: #f3ebeb;
+      &:hover {
+        background-color: #f3ebeb;
+        color: #d43447;
+      }
+    }
+  }
+  .CartItems{
+   margin-top:-420px ; 
+   margin-bottom: 200px;
+  }
+
+  .itemCart {
+    display: flex;
+    background-color: #f8fafc;
+    width: 750px;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top:20px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(78, 76, 76, 0.1);
+    img {
+      height: 120px;
+      width: 120px;
+      margin-left: 10px;
+      
+    }
+    .removeBox {
+      position: absolute;
+      margin-left: 950px;
+      cursor: pointer;
+      background-color: #e8eef5;
+      border-radius: 10px;
+      height: 35px;
+      display: flex;
+      width: 35px;
+      svg {
+        margin: auto;
+      }
+      &:hover {
+        background-color: #dae1e7;
+        transition-delay: 0.05s;
+      }
+    }
+    .title {
+      position: absolute;
+      margin-left: 155px;
+      font-size: 19px;
+      color:#313030 ;
+    }
+    .price {
+      margin-left: 660px;
+      font-size: 20px;
+      position: absolute;
+      color:#313030 ;
+    }
+
+    .CartImage {
+      border-radius: 10px;
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .CountBox {
+      width: 100px;
+      height: 40px;
+      position: absolute;
+      border-radius: 3px;
+      margin-top: 80px;
+      margin-left: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: row;
+      background-color: #bb3b49;
+      color: white;
+      box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.1);
+
+      .btn {
+        border-radius: 5px;
+        border: none;
+        background-color: #bb3b49;
+        color: white;
+        font-size: 20px;
+        align-self: center;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .Sidebox {
+    width: 400px;
+    height: 300px;
+    background-color: #fdfdff;
+    margin-left: 820px;
+    margin-top:20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+    color:#313030 ;
+    .CartName {
+      text-align: center;
+      background-color: #f1f5f8;
+      border-radius: 3px 3px 0px 0px;
+      height: 40px;
+      font-size: 20px;
+      line-height: 40px;
+      color:#313030 ;
+      box-shadow: 0px 5px 5px 1px rgba(241,245,248,0.5);
+      
+    }
+    .WrapperSum{
+      margin-top: 20px;
+      font-size: 17px;
+      
+      .sumItem{
+        float: left;
+        margin-left: 30px;
+      }
+      .sumPrice{
+        float:right;
+        font-size: 16px;
+        margin-right: 50px; 
+      }
+
+    }
+    .BottomSide{
+      text-align: center;
+      .Payment{
+        margin-top:50px ;
+      }
+      .buy{
+        background-color: #e8eef5;
+        border: none;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 130px; 
+      }
+
+    }
+    
+  }
+}
