@@ -20,47 +20,10 @@ export const Cartpage = () => {
     return <CartEmpty />;
   }
   return (
-<<<<<<< HEAD
-    <div className={styles.wrapper}>
-      <h1>Корзина</h1>
-      <div className='cart-name'>Корзина</div>
-      <h4>Главная - Корзина</h4>
-      <div className='box'>
-        <div className='box-line'>вапджыдваоп</div>
-        <div className='box-section'>
-          <div className='box-img'>вапвап</div>
-          <div className='box-name'>ываыва</div>
-          <div className='box-pricePerOne'>ываываы</div>
-          <div className='box-quantity'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-          <div className='box-totalPrice'>ываыва</div>
-        </div>
-=======
     <div className={styles.Wrapper}>
       <div className={styles.Top}>
         <span className={styles.title}>Корзина</span>
        <Link to="/"> <span className={styles.back}>Вернуться назад</span> </Link>
->>>>>>> main
       </div>
       <div className={styles.Sidebox}>
           <div className={styles.CartName}>Ваша корзина</div>
