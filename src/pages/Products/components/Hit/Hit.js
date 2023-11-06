@@ -30,11 +30,6 @@ export const Hit = () => {
               <p className="BobaPrice">1 ₽</p>
             </p>
           </p>
-          <div class="expand-details">
-            <a href="/home" class="details-button">
-              Details
-            </a>
-          </div>
         </div>
 
         <div className="Container">
@@ -54,11 +49,6 @@ export const Hit = () => {
               <p className="NoodlePrice">1 ₽</p>
             </p>
           </p>
-          <div class="expand-details">
-            <a href="/home" class="details-button">
-              Details
-            </a>
-          </div>
         </div>
 
         <div className="Container">
@@ -78,11 +68,6 @@ export const Hit = () => {
               <p className="IceCreamPrice">1 ₽</p>
             </p>
           </p>
-          <div class="expand-details">
-            <a href="/home" class="details-button">
-              Details
-            </a>
-          </div>
         </div>
 
         <div className="Container">
@@ -102,11 +87,6 @@ export const Hit = () => {
               <p className="SodaPrice">1 ₽</p>
             </p>
           </p>
-          <div class="expand-details">
-            <a href="/home" class="details-button">
-              Details
-            </a>
-          </div>
         </div>
       </div>
     </div>
