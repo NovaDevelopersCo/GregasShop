@@ -38,10 +38,12 @@
   .swiper {
     max-height: 169px;
     max-width: 367px;
+    align-items: center;
   }
   .swiper-slide img {
     max-height: 200px;
     max-width: 350px;
+    align-items: center;
   }
   .swiper-pagination-bullet {
     display: none
