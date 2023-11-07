@@ -1,13 +1,13 @@
 import React from 'react';
 import style from './Cart.module.scss';
-import { FaShoppingCart } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { selectCart } from '../../../../../redux/slices/CartSlice';
 
 
 const Cart = () => {  
-  const { items, totalPrice } = useSelector((state) => state.CartSlice);
-
+  const { items, totalPrice } = useSelector(selectCart);
+  
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
   return (

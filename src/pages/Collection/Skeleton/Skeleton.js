@@ -4,10 +4,10 @@ import "../Collection.scss"
 
 const Skeleton = (props) => (
   <ContentLoader 
-    className="product-list"
+    className="collection-container-skeleton"
     speed={2}
-    width={302}
-    height={420}
+    width={312}
+    height={407}
     viewBox="0 0 302 420"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"

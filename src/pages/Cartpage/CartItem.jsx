@@ -2,13 +2,13 @@ import { useDispatch } from 'react-redux';
 import { addItem, minusItem, removeItem } from '../../redux/slices/CartSlice';
 import styles from './Cartpage.module.scss'; // модульность css
 
-const CartItem = ({ id, title, price, count, image }) => {
+const CartItem = ({ id, title, price, count, image, totalCount }) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
     dispatch(
       addItem({
-        id,
+        id, price,count,
       })
     );
   };
@@ -25,7 +25,7 @@ const CartItem = ({ id, title, price, count, image }) => {
     <div className={styles.itemCart}>
       <img className={styles.CartImage} src={image}></img>
       <div className={styles.price}>{price* count}₽</div>
-      <div className={styles.title}>{title}</div>
+      <div className={styles.title}>{title} ({count}) </div>
       <div className={styles.CountBox}>
         <div onClick= {onClickPlus}className={styles.btn}> + </div>
           <div>{count}</div>

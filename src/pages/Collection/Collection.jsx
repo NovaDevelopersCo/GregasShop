@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategoryId, setCurrentPage, setFilters } from '../../redux/slices/filterSlice';
+import { selectFilter, setCategoryId, setCurrentPage, setFilters } from '../../redux/slices/filterSlice';
 import Categories from './Categories/Categories';
 import { ItemBlock } from '../Products/components/ItemBlock/ItemBlock';
 import './Collection.scss';
@@ -10,7 +10,7 @@ import { Sort, list } from './Sort/Sort';
 import Skeleton from './Skeleton/Skeleton';
 import { useSearch } from '../../hooks/context/SearchContext';
 import { Pagination } from '../Products/components/Pagination';
-import { fetchItems } from '../../redux/slices/itemSlice';
+import { fetchItems, selectItems } from '../../redux/slices/itemSlice';
 
 export const Collection = () => {
   const navigate = useNavigate();
@@ -18,8 +18,8 @@ export const Collection = () => {
   const isMounted = React.useRef(false);
   const isSearch = React.useRef(false);
 
-  const { categoryId, sort, currentPage } = useSelector((state) => state.filterSlice);
-  const { items, status } = useSelector((state) => state.itemSlice);
+  const { categoryId, sort, currentPage } = useSelector(selectFilter);
+  const { items, status } = useSelector(selectItems);
 
   const sortType = sort.sortProperty;
   const { searchValue } = useSearch();
@@ -45,6 +45,7 @@ export const Collection = () => {
         category,
         search,
         currentPage,
+        itemCategory: 'all'
       })
     );
   };
@@ -86,21 +87,21 @@ export const Collection = () => {
     isMounted.current = true;
   }, [categoryId, sortType, searchValue, currentPage]);
 
-  const Skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index}></Skeleton>);
+  const Skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}></Skeleton>);
   const products = items.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock>);
 
   return (
     <div className="collection-container">
       <Categories value={categoryId} onClickCategories={onChangeCategory} />
       <Sort></Sort>
-      {status === 'error' ? (
+      {status.all === 'error' ? (
         <div className='error-alert'>
           <h1>Произошла ошибка!</h1>
           <h2>К сожалению, не удалось получить товары...</h2>
           <h2>Попробуйте повторить попытку позже!</h2>
         </div>
       ) : (
-        <div className="product-list">{status === 'loading' ? Skeletons : products}</div>
+        <div className="product-list">{status.all === 'loading' ? Skeletons : products}</div>
       )}
 
       <Pagination currentPage={currentPage} onChangePage={onChangePage}></Pagination>

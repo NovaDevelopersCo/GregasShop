@@ -1,14 +1,15 @@
 import React from 'react';
 import { Cart, BackToTopButton, MainGui, Search, Catalog } from './components';
-
-export const Header = ({searchValue, setSearchValue}) => {
+import { useLocation } from 'react-router-dom';
+export const Header = ({ searchValue, setSearchValue }) => {
+  const location = useLocation();
   return (
     <>
-
       <BackToTopButton />
-      <Cart/>
+
+      {location.pathname !== '/Cartpage' && <Cart />}
       <MainGui />
-      <Search  searchValue={searchValue} setSearchValue={setSearchValue}/>
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
       <Catalog />
     </>
   );
