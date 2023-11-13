@@ -34,11 +34,25 @@ export const MainGui = () => {
             </Link>
           </li>
         )}
-        <li>
-          <Link to="/home">
-            <span>Хиты</span>
-          </Link>
-        </li>
+        
+        {location.pathname !== '/hits' ? (
+          <li>
+            <Link to="/hits">
+              <span>Хиты</span>
+            </Link>
+          </li>
+        ) : (
+          <li style={{ background: "white" }}>
+            <Link style={{ color: "black" }} to="/hits">
+              <span>Хиты</span>
+            </Link>
+          </li>
+        )}
+        
+
+
+
+
         <li>
           <Link to="/home">
             <span>Скидки</span>

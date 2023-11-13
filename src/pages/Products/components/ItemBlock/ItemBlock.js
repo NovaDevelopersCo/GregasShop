@@ -46,12 +46,25 @@ export const ItemBlock = ({ title, price, image, rating, id }) => {
         </Link>
       </div>
 
-      <button type="button" class="addtoButton" data-toggle="button" aria-pressed="false" autocomplete="off">
-        <span onClick={onClickAdd} className="ScoreBtn">
-          {addedCount ? 'Добавлено' : 'В корзину'}
-          {addedCount > 0 && <span>({addedCount})</span>}
-        </span>
-      </button>
+      {addedCount > 0 ? (
+        <button
+          type="button"
+          className="addtoButton-active"
+          data-toggle="button"
+          aria-pressed="false"
+          autocomplete="off"
+        >
+          <span onClick={onClickAdd} className="ScoreBtn">
+            Добавлено ({addedCount})
+          </span>
+        </button>
+      ) : (
+        <button type="button" className="addtoButton" data-toggle="button" aria-pressed="false" autocomplete="off">
+          <span onClick={onClickAdd} className="ScoreBtn">
+            В корзину
+          </span>
+        </button>
+      )}
     </div>
   );
 };
