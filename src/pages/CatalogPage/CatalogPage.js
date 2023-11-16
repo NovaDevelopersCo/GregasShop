@@ -5,25 +5,13 @@ import { Subcategories } from './SubCategories';
 import { Link, useLocation } from 'react-router-dom';
 
 export const CatalogPage = () => {
-  const subcategoryStart = [0,6,11,14,15,25,26]; // Создаем массив, который содержит количество подкатегорий для каждой категории
-  const subcategoryCounts = [6,11,14,23,25,30]; // Замените на фактические значения
-//   }
+  const subcategoryStart = [0, 6, 11, 14, 15, 25, 26];
+  const subcategoryCounts = [6, 11, 14, 23, 25, 30];
 
-// export default function BreadCrumbs() {
-//   const location = useLocation()
-
-//   let currentLink = ''
-
-//   const BreadCrumbs = location.pathname.split('/')
-//   .filter(crumb => crumb !== '')
-//   .map(crumb => {
-//     currentLink =+ `/${crumb}`
-//   })
 
   return (
     <div>
       <h2>Каталог</h2>
-      <div className="BreadCrumbs"> Главная - Каталог </div>
       <br></br>
       <div className="CategoryBoxWrapper">
         {CatalogData.map((obj, index) => {
@@ -46,5 +34,7 @@ export const CatalogPage = () => {
       </div>
     </div>
   );
-};
+  };
+
+
 
