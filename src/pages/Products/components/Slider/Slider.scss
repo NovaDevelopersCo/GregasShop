@@ -1,8 +1,6 @@
 
 .swiper {
   width: 1230px;
-  height:486px;
-
 }
 
 .swiper-slide {
@@ -32,4 +30,122 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 768px) and (min-width: 0px){
+  .swiper-button-next,.swiper-button-prev,.swiper-pagination-bullet-active{
+    display: none;
+  }
+}
+@media (max-width: 319px) and (min-width: 280px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 35%;
+  }
+}
+@media (max-width: 359px) and (min-width: 320px){
+  .swiper, .swiper-slide img {
+    max-width:120vw;
+  }
+  .swiper{
+    margin-left: 33%;
+  }
+}
+@media (max-width: 374px) and (min-width: 360px){
+  .swiper, .swiper-slide img {
+    max-width:115vw;
+  }
+  .swiper{
+    margin-left: 30%;
+  }
+}
+@media (max-width: 389px) and (min-width: 375px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 30%;
+  }
+}
+@media (max-width: 411px) and (min-width: 390px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 29%;
+  }
+}
+@media (max-width: 413px) and (min-width: 412px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 29%;
+  }
+}
+@media (max-width: 424px) and (min-width: 414px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 29%;
+  }
+}
+@media (max-width: 429px) and (min-width: 425px){
+  .swiper, .swiper-slide img {
+    max-width:90vw;
+  }
+  .swiper{
+    margin-left: 28%;
+  }
+}
+@media (max-width: 440px) and (min-width: 430px){
+  .swiper, .swiper-slide img {
+    max-width:110vw;
+  }
+  .swiper{
+    margin-left: 28%;
+  }
+}
+@media (max-width: 767px) and (min-width: 540px){
+  .swiper, .swiper-slide img {
+    max-width:57vw;
+  }
+  .swiper{
+    margin-left: 25%;
+  }
+}
+@media (max-width: 819px) and (min-width: 768px){
+  .swiper, .swiper-slide img {
+    max-width:55vw;
+  }
+  .swiper{
+    margin-left: 15%;
+  }
+}
+@media (max-width: 911px) and (min-width: 820px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 15%;
+  }
+}
+@media (max-width: 1023px) and (min-width: 912px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 12%;
+  }
+}
+@media (max-width: 1040px) and (min-width: 1024px){
+  .swiper, .swiper-slide img {
+    max-width:100vw;
+  }
+  .swiper{
+    margin-left: 15%;
+  }
 }

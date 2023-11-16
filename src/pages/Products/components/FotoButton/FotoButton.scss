@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    outline: 1px black;
 }
 
 body {
@@ -10,38 +11,149 @@ body {
 }
 
 .Foto {
-    display: flex;
-    align-items: center;
+  width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 6fr));
+  align-items: center;
+  margin-top: 2%;
+  box-sizing: border-box;
 }
 .Foto img{
   width: 150px;
   height: 150px;
   border-radius: 5px;
 }
+.fotoItem {
+  display: flex; /* Добавляем стиль "display: flex" для выстраивания элементов в ряд */
+  flex-direction: column; /* Помещаем текст под изображением */
+  align-items: center; /* Выравниваем элементы по центру горизонтально */
+  font-family: sans-serif;
+  width: 100%;
+  height: auto;
+}
 
+.fotoItem img {
+  width: 30vw;
+  height: auto;
+  border-radius: 2px;
+}
+
+.Foto p {
+  margin-top: 1vh;
+  font-family: sans-serif;
+  font-size: 3vw;
+  color: black;
+}
+
+@media (max-width: 319px) and (min-width: 280px){
 .Foto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-left: 180vw;
+}
+}
+@media (max-width: 359px) and (min-width: 320px){
+.Foto {
+  margin-left: 160vw;
+}
+}
+@media (max-width: 374px) and (min-width: 360px){
+.Foto {
+  width: 100vw;
+  margin-left: 110vw;
+}
+}
+@media (max-width: 389px) and (min-width: 375px){
+.Foto {
+  width: 90vw;
+  grid-template-columns: repeat(auto-fill, minmax(23vw, 6fr));
+  margin-left: 105vw;
+}
+.Foto p {
+  font-size: 2.9vw;
+}
+}
+@media (max-width: 411px) and (min-width: 390px){
+.Foto {
+  margin-left: 115vw;
+}
+}
+@media (max-width: 413px) and (min-width: 412px){
+.Foto {
+  width: 100vw;
+  margin-left: 90vw;
+}
+}
+@media (max-width: 424px) and (min-width: 414px){
+.Foto {
+  margin-left: 100vw;
+}
+}
+@media (max-width: 429px) and (min-width: 425px){
+.Foto {
+  margin-left: 100vw;
+}
+}
+@media (max-width: 539px) and (min-width: 430px){
+.Foto {
+  margin-left: 110vw;
+}
+}
+@media (max-width: 767px) and (min-width: 540px){
+.Foto {
+  margin-left: 56vw;
+}
+.fotoItem img {
+  width: 20vw;
+}
+.Foto p {
+  font-size: 2vw;
+}
+}
+@media (max-width: 819px) and (min-width: 768px){
+.Foto {
+  margin-left: 22vw;
+}
+.fotoItem img {
+  width: 20vw;
+}
+.Foto p {
+  font-size: 2vw;
+}
+}
+@media (max-width: 911px) and (min-width: 820px){
+.Foto {
+  width: 100vw;
+  margin-left:25vw;
+}
+}
+@media (max-width: 1023px) and (min-width: 912px){
+.Foto {
+  width: 100vw;
+  margin-left: 15vw;
+}
+}
+@media (max-width: 1279px) and (min-width: 1024px){
+.Foto {
+  width: 90vw;
+  margin-left: 20vw;
+  grid-template-columns: repeat(auto-fill, minmax(15vw, 6fr));
+}
+.fotoItem img {
+  width: 15vw;
+}
+.Foto p {
+  font-size: 1vw;
+}
+}
+@media(min-width: 1280px){
+  .Foto {
+    width: 90vw;
+    margin-left: 10vw;
+    grid-template-columns: repeat(auto-fill, minmax(12vw, 6fr));
   }
-  
-  .fotoItem {
-    display: flex; /* Добавляем стиль "display: flex" для выстраивания элементов в ряд */
-    flex-direction: column; /* Помещаем текст под изображением */
-    align-items: center; /* Выравниваем элементы по центру горизонтально */
-    font-family: sans-serif;
-  }
-  
   .fotoItem img {
-    width: 180px;
-    height: 130px;
-    border-radius: 2px;
-    
+    width: 10vw;
   }
-  
   .Foto p {
-    margin-top: 10px; /* Добавьте отступ сверху для текста */
-    font-family: sans-serif;
-    color: black;
+    font-size: 1vw;
   }
-  
+  }
