@@ -11,9 +11,10 @@ const Cart = () => {
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
   return (
     <div className={style.WrapperCart}>
+
       <Link to="/Cartpage" className={style.cart}>
         <img src={cart} height='35px' width='35px' />
-        <div className={style.Count}>{totalCount}</div>
+        <div className={style.count}>{totalCount}</div>
       </Link>
     </div>
   );

@@ -48,7 +48,7 @@ export const routes = [
         element: <Cargo />
       },
       {
-        path: 'collection',
+        path: 'all',
         element: <Collection />,
       },
       {
