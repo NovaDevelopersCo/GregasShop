@@ -1,24 +1,25 @@
 import { Link, useLocation } from 'react-router-dom';
 
 export const BreadCrumbs = () => {
-    const location = useLocation();
-    let currentLink = '';
+  const location = useLocation();
+  let currentLink = '';
 
-    const crumbs = location.pathname.split('/')
-      .filter(crumb => crumb !== '')
-      .map(crumb => {
-        currentLink += `/${crumb}`;
-        return (
-          <span key={currentLink}>{crumb}</span>
-        );
-      });
+  const crumbs = location.pathname
+    .split('/')
+    .filter(crumb => crumb !== '')
+    .map(crumb => {
+      currentLink += `/${crumb}`;
+      return <span key={currentLink}>{crumb}</span>;
+    });
 
-    return (
-      <div className="BreadCrumbs">
-        <Link to ="/">Главная</Link>
-        {crumbs}
-      </div>
-    );
-  };
+  const isHomePage = location.pathname === '/' || location.pathname === '/home';
 
-  export default BreadCrumbs;
+  return (
+    <div className="BreadCrumbs">
+      {!isHomePage && <Link to="/">Главная</Link>}
+      {crumbs}
+    </div>
+  );
+};
+
+export default BreadCrumbs;
