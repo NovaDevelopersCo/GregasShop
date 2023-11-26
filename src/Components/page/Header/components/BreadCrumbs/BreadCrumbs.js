@@ -17,9 +17,11 @@ export const BreadCrumbs = () => {
   return (
     <div className="BreadCrumbs">
       {!isHomePage && <Link to="/">Главная</Link>}
-      {crumbs}
+      {location.pathname !== '/home' && crumbs}
     </div>
   );
 };
 
 export default BreadCrumbs;
+
+
