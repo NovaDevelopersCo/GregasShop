@@ -9,7 +9,9 @@ export const BaseLayout = () => {
   return (
     <div className="App">
       <SearchProvider>
-        <Header />
+        <div className='HeaderWrapper'>
+          <Header />
+        </div>
         <Outlet />
         <Footer />
       </SearchProvider>

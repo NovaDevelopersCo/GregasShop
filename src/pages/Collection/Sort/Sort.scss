@@ -3,6 +3,7 @@ $orange:#ce191f;
     position: relative;
     right: -470px;
     top: -35px;
+  margin-right: 0;
     &__label {
       display: flex;
       align-items: center;
@@ -27,14 +28,14 @@ $orange:#ce191f;
       right: 0;
       margin-top: 15px;
       background: #ffffff;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
       border-radius: 10px;
       overflow: hidden;
       padding: 10px 0;
       z-index: 1;
   
       ul {
-        overflow: hidden;
+
         li {
           padding: 12px 20px;
           cursor: pointer;
@@ -52,3 +53,38 @@ $orange:#ce191f;
       }
     }
   }
+@media (max-width: 1024px) {
+  .sort,.sort__label {
+    overflow: hidden;
+    b{
+      display: none;
+    }
+
+  }
+  .categories{
+    margin-left: 8%;
+  }
+  svg{
+     display: none;
+   }
+}
+@media (max-width: 853px) {
+  b{
+    display: none;
+  }
+
+  .sort{
+    position: relative;
+    left:280px;
+    top: -45px;
+
+  }
+
+}
+@media (max-width: 500px) {
+  .sort{
+    position: relative;
+    left:23%;
+    top: -45px;
+  }
+}

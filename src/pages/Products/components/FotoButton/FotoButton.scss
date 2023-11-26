@@ -1,6 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
+*{
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -24,23 +24,23 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .fotoItem {
-    display: flex; /* Добавляем стиль "display: flex" для выстраивания элементов в ряд */
-    flex-direction: column; /* Помещаем текст под изображением */
-    align-items: center; /* Выравниваем элементы по центру горизонтально */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
     font-family: sans-serif;
   }
-  
+
   .fotoItem img {
     width: 180px;
     height: 130px;
     border-radius: 2px;
-    
+
   }
-  
+
   .Foto p {
-    margin-top: 10px; /* Добавьте отступ сверху для текста */
+    margin-top: 10px; 
     font-family: sans-serif;
     color: black;
   }
@@ -90,3 +90,5 @@ body {
       display: none;
     }
 }
+
+  }

@@ -1,75 +1,28 @@
 .WrapperCart {
-  position: relative;
-
+  overflow: hidden;
+  z-index: 100;
+  margin-top: -55px;
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-right: 50px;
+  align-items: end;
+  display: flex;
   .cart {
-    position: absolute;
-    display: flex;
-    right: 320px;
-    z-index: 999;
-    right: 20px;
-    top: 34px;
-    width: 100px;
-    height: 40px;
-    background-color: #161a1d;
-    border-radius: 20px;
-
-  &:hover{
-    background-color: black;
-  }
-
-    span {
-      color: white;
+    position: relative;
+    .count {
       position: absolute;
-      width: 35px;
-      text-align: center;
-      font-size: 9px;
-      right: -20px;
-    }
-    l {
-      color: white;
-      position: relative;
-      right: 5px;
-      top: 10px;
-      font-size: 12px;
-    }
-    .button__delimiter {
-      svg {
-        position: relative;
-        max-width: 30px;
-        min-width: 16px;
-        top: 10px;
-        right: -8px;
-      }
-    }
-    span {
-      color: white;
-      width: 35px;
-      position: relative;
-      font-size: 9px;
-    }
-    .cartIcon {
-      color: rgb(255, 255, 255);
-      font-size: 24px;
-      z-index: 1000;
-      &:hover {
-        color: rgb(255, 255, 255);
-      }
+      top: -3px;
+      left: 20px;
+      padding: 5px 5px 4px 4px;
+      background-color: #fff;
+      border-radius: 100px;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      font-size: 0.7rem;
     }
   }
-  ul {
-    list-style-type: none;
-    padding: 0;
-
-    li {
-      margin-bottom: 0px;
-    }
-  }
+  
 }
-
-.line {
-  background-color: white;
-  height: 40px;
-  width: 1px;
-  z-index: 1000px;
-}
-

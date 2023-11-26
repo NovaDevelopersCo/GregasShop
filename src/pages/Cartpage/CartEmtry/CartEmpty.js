@@ -15,7 +15,7 @@ export const CartEmpty= () => (
     </p>
     <img src={cartEmptyImg} alt="Empty cart" />
     <Link to="/" className="button--black">
-      <span>Вернуться назад</span>
+      Вернуться назад
     </Link>
   </div>
 );

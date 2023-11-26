@@ -12,6 +12,7 @@ import { Information } from './pages/Information/Information';
 import { Cartpage } from './pages/Cartpage/Cartpage';
 import { Personalacc } from './pages/Personalacc/Personalacc';
 import { CatalogPage } from './pages/CatalogPage/CatalogPage';
+import {Hits} from './pages/Hits/Hits';
 
 export const routes = [
   {
@@ -47,7 +48,7 @@ export const routes = [
         element: <Cargo />
       },
       {
-        path: 'collection',
+        path: 'all',
         element: <Collection />,
       },
       {
@@ -77,6 +78,10 @@ export const routes = [
       {
         path:'personalacc',
         element: <Personalacc />
+      },
+      {
+        path:'hits',
+        element: <Hits />
       },
     ],
   },

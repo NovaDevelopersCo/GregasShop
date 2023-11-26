@@ -1,94 +1,41 @@
 import React from 'react';
 import './New.scss';
-import photo1 from '../../../../assets/images/photo1.jpg';
-import photo2 from '../../../../assets/images/photo2.jpg';
-import photo3 from '../../../../assets/images/photo3.jpg';
-import photo4 from '../../../../assets/images/photo4.jpg';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { ItemBlock } from '../ItemBlock/ItemBlock';
+import { fetchItems } from '../../../../redux/slices/itemSlice';
+import Skeleton from '../../../Collection/Skeleton/Skeleton';
+
 
 export const New = () => {
+
+  const itemsNew = useSelector((state) => state.itemSlice.itemsNew);
+  const statusNew = useSelector((state) => state.itemSlice.status.new);
+  const dispatch = useDispatch();
+
+  const fetchProducts = async () => {
+    const categoryId = 2;
+    const currentPage= 1;
+    const category = categoryId > 0 ? `category=${categoryId}` : '';
+
+    dispatch(
+      fetchItems({
+        category,
+        currentPage,
+        itemCategory: 'new', // Используйте 'new' для New компонента
+      })
+    );
+  };
+  React.useEffect(() => {
+      fetchProducts();
+  }, []);
+  const Skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}></Skeleton>);
+  const products = itemsNew.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock >);
   return (
     <div className="NewSlider">
-      {' '}
       <p className="NewSliderText"> Новинки </p>
       <div className="NewPhotos">
-        <div className="Container">
-          <div className="image-container">
-            <Link to="/product/1">
-              <img src={photo1} />
-              <div className="shine-effect"></div>
-            </Link>
-          </div>
-          <p className="Boba">
-            <a href="/home/" className="link">
-              {' '}
-              Boba{' '}
-            </a>
-            <a href="/home/"></a>
-            <p className="BobaStock">
-              {' '}
-              В Наличии &#10004; 1<p className="BobaSold"> Продано За Месяц &#10004; 1</p>
-              <p className="BobaPrice">1 ₽</p>
-            </p>
-          </p>
-        </div>
-
-        <div className="Container">
-          <div className="image-container">
-            <a href="/product/2">
-              <img src={photo2} />
-            </a>
-          </div>
-          <p className="Noodle">
-            <a href="/home/" className="link">
-              {' '}
-              Noodle{' '}
-            </a>
-            <p className="NoodleStock">
-              {' '}
-              В Наличии &#10004; 1<p className="NoodleSold"> Продано За Месяц &#10004; 1</p>
-              <p className="NoodlePrice">1 ₽</p>
-            </p>
-          </p>
-        </div>
-
-        <div className="Container">
-          <div className="image-container">
-            <a href="/product/3">
-              <img src={photo3} />
-            </a>
-          </div>
-          <p className="IceCream">
-            <a href="/home/" className="link">
-              {' '}
-              Ice Cream{' '}
-            </a>
-            <p className="IceCreamStock">
-              {' '}
-              В Наличии &#10004; 1 <p className="IceCreamSold"> Продано За Месяц &#10004; 1</p>
-              <p className="IceCreamPrice">1 ₽</p>
-            </p>
-          </p>
-        </div>
-
-        <div className="Container">
-          <div className="image-container">
-            <a href="/product/4">
-              <img src={photo4} />
-            </a>
-          </div>
-          <p className="Soda">
-            <a href="/home/" className="link">
-              {' '}
-              Soda{' '}
-            </a>
-            <p className="SodaStock">
-              {' '}
-              В Наличии &#10004; 1<p className="SodaSold">Продано За Месяц &#10004; 1</p>
-              <p className="SodaPrice">1 ₽</p>
-            </p>
-          </p>
-        </div>
+      {statusNew === 'loading' ? Skeletons : products}
       </div>
     </div>
   );

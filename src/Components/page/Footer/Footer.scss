@@ -9,7 +9,8 @@
   .AllCountainer {
     display: flex;
     justify-content: space-around;
-    width: 1231px;
+    
+    max-width: 90vw;
     height: 333px;
     flex-shrink: 0;
   }
@@ -289,4 +290,169 @@ flex-shrink: 0;
   .СontainerOurContact {
     margin-right: 40px; /* Добавляем отступ между контейнерами */
   }
+}
+@media (max-width: 319px) and (min-width: 280px){
+.AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 70vh;
+}
+}
+@media (max-width: 359px) and (min-width: 320px){
+.AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 45vh;
+}
+}
+@media (max-width: 374px) and (min-width: 360px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 60vh;
+}
+}
+@media (max-width: 389px) and (min-width: 375px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 65vh;
+}
+}
+@media (max-width: 411px) and (min-width: 390px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 50vh;
+}
+}
+@media (max-width: 413px) and (min-width: 412px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 50vh;
+}
+}
+@media (max-width: 424px) and (min-width: 414px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 50vh;
+}
+}
+@media (max-width: 429px) and (min-width: 425px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 45vh;
+}
+}
+@media (max-width: 539px) and (min-width: 430px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 20vh;
+}
+}
+@media (max-width: 767px) and (min-width: 540px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 30vh;
+}
+}
+@media (max-width: 819px) and (min-width: 768px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 20vh;
+}
+}
+@media (max-width: 911px) and (min-width: 820px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 10vh;
+}
+}
+@media (max-width: 1023px) and (min-width: 912px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 0vh;
+}
+}
+@media (max-width: 1279px) and (min-width: 1024px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center;/* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 0vh;
+}
+}
+@media(min-width: 1280px){
+  .AllCountainer,
+footer {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: center; /* Центрируем блоки по горизонтали */
+}
+#footer {
+  margin-top: 0vh;
+}
 }

@@ -5,10 +5,6 @@ body {
 }
 
 .container5 {
-  display: flex;
-  text-align: justify;
-  justify-content: space-around;
-  flex-direction: column;
   max-width: 1158px;
   height: 1027px;
   margin-left: 30px;
@@ -45,57 +41,57 @@ font-weight: 400;
 line-height: normal;
 }
 
-@media (max-width: 1600px) {
-  .container5,
-  body {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: auto; /* Центрируем блоки по горизонтали */
-    margin-right: auto;
-    width: 100%; /* Занимают 50% ширины родительского контейнера */
-  }
-}
-@media (max-width: 1366px) {
-  .container5,
-  body {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: auto; /* Центрируем блоки по горизонтали */
-    margin-right: auto;
-    width: 80%; /* Занимают 50% ширины родительского контейнера */
-  }
-}
-@media (max-width: 1024px) {
-  .container5,
-  body {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 12%; /* Центрируем блоки по горизонтали */
-    margin-right: 50%;
-    width: 80%; /* Занимают 50% ширины родительского контейнера */
-  }
-}
-@media (max-width: 768px) {
-  .container5,
-  body {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 27%; /* Центрируем блоки по горизонтали */
-    margin-right: 50%;
-    width: 60%; /* Занимают 50% ширины родительского контейнера */
-  }
-}
-@media (max-width: 425px) {
-  .container5,
-  body {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 40%; /* Центрируем блоки по горизонтали */
-    margin-right: 30%;
-    width: 50%; /* Занимают 50% ширины родительского контейнера */
-  }
-}
-@media (max-width: 320px) {
-  .container5,
-  body {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 41%; /* Центрируем блоки по горизонтали */
-    margin-right: 50%;
-    width: 50%; /* Занимают 50% ширины родительского контейнера */
-  }
-}
+// @media (max-width: 1600px) {
+//   .container5,
+//   body {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: auto; /* Центрируем блоки по горизонтали */
+//     margin-right: auto;
+//     width: 100%; /* Занимают 50% ширины родительского контейнера */
+//   }
+// }
+// @media (max-width: 1366px) {
+//   .container5,
+//   body {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: auto; /* Центрируем блоки по горизонтали */
+//     margin-right: auto;
+//     width: 80%; /* Занимают 50% ширины родительского контейнера */
+//   }
+// }
+// @media (max-width: 1024px) {
+//   .container5,
+//   body {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 12%; /* Центрируем блоки по горизонтали */
+//     margin-right: 50%;
+//     width: 80%; /* Занимают 50% ширины родительского контейнера */
+//   }
+// }
+// @media (max-width: 768px) {
+//   .container5,
+//   body {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 27%; /* Центрируем блоки по горизонтали */
+//     margin-right: 50%;
+//     width: 60%; /* Занимают 50% ширины родительского контейнера */
+//   }
+// }
+// @media (max-width: 425px) {
+//   .container5,
+//   body {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 40%; /* Центрируем блоки по горизонтали */
+//     margin-right: 30%;
+//     width: 50%; /* Занимают 50% ширины родительского контейнера */
+//   }
+// }
+// @media (max-width: 320px) {
+//   .container5,
+//   body {
+//     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+//     margin-left: 41%; /* Центрируем блоки по горизонтали */
+//     margin-right: 50%;
+//     width: 50%; /* Занимают 50% ширины родительского контейнера */
+//   }
+// }

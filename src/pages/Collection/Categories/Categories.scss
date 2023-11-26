@@ -1,11 +1,13 @@
 .categories {
   display: flex;
+
   ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: flex-start;
     margin-right: 550px;
+    margin-top: 20px;
   }
 
   li {
@@ -18,13 +20,33 @@
     border-radius: 12px;
     text-align: center;
     margin: 0 10px 0 10px;
-  
+
   }
 
   li.active {
-    background-color: #A4161A;
+    background-color: #c91332;
     color: #fff;
     border-radius: 12px;
 
-  } 
+  }
+}
+@media(max-width: 1024px){
+  .categories{
+  overflow: auto;
+    width: 800px;
+    ul{
+      width: 800px;
+      overflow: auto;
+
+    }
+  }
+}@media(max-width: 689px){
+  .categories{
+
+    ul{
+
+      transform: translateX(50%);
+
+    }
+  }
 }
