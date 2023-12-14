@@ -26,10 +26,10 @@ const newsSlice = createSlice({
         state.status.all = 'loading'
       })
       .addCase(fetchNews.fulfilled, (state, action) => {
+        console.log('Fetched news data:', action.payload.data);
         state.status.all = 'success';
-
-        if(action.meta.arg.itemCategory === 'all') {
-          state.items = action.payload.data;
+        if (action.meta.arg.itemCategory === 'all') {
+          state.news = action.payload;
           state.status.all = 'success';
         }
       })
