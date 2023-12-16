@@ -1,22 +1,19 @@
 import { fetchNews, selectNews } from '../../../../redux/slices/newsSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export const NewsWall = () => {
   const dispatch = useDispatch();
   const { news, statusHit } = useSelector(selectNews);
-  console.log(news)
-  const fetchProducts = async () => {
-    dispatch(
-      fetchNews({
-        itemCategory: 'all',
-      })
-    );
-  };
+  // const formattedDate = new Date(news.createdAt).toLocaleString();
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const fetchProducts = async () => {
+      dispatch(fetchNews({ itemCategory: 'all' }));
+    };
+
     fetchProducts();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="CenteredNewsWall">
@@ -29,7 +26,10 @@ export const NewsWall = () => {
                 <a href="/home">
                   <div className="image-containerNewsWallOne">
                     <img src={obj.imgUrl} alt={obj.title} />
-                    <div className="Date">31.01.2002</div>
+                    <div className="Date">
+                      {/*{formattedDate}*/}
+                      20.11.2023
+                    </div>
                     <p>{obj.title}</p>
                   </div>
                 </a>
