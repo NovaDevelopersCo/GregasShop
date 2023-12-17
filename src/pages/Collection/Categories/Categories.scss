@@ -1,3 +1,4 @@
+
 .categories {
   display: flex;
 
@@ -6,8 +7,9 @@
     padding: 0;
     display: flex;
     justify-content: flex-start;
-    margin-right: 550px;
+    margin-right: 300px;
     margin-top: 20px;
+    min-width: 150px;
   }
 
   li {
@@ -34,6 +36,7 @@
   .categories{
   // overflow: auto;
     width: 800px;
+    width: 100%;
     ul{
       width: 800px;
       overflow: auto;
@@ -44,6 +47,7 @@
 @media(max-width: 689px){
   .categories{
     max-width: 700px;
+    width: 100%;
     ul{
 
       transform: translateX(50%);
