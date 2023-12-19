@@ -1,15 +1,29 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCart } from '../../redux/slices/cart/CartSlice';
 import { addItem, minusItem, removeItem } from '../../redux/slices/cart/CartSlice';
 import styles from './Cartpage.module.scss'; // модульность css
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 const CartItem = ({ id, title, price, count, image, totalCount }) => {
   const dispatch = useDispatch();
+  const { items, totalPrice } = useSelector(selectCart);
+  const isMounted = React.useRef(false);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('cart', json);
+    }
+    isMounted.current = true;
+  }, [items]);
 
   const onClickPlus = () => {
     dispatch(
       addItem({
-        id, price,count,
+        id,
+        price,
+        count,
       })
     );
   };
@@ -17,24 +31,36 @@ const CartItem = ({ id, title, price, count, image, totalCount }) => {
   const onClickMinus = () => {
     dispatch(minusItem(id));
   };
-
   const onClickRemove = () => {
-    if (window.confirm('Удалить это?')) dispatch(removeItem(id));
+    if (window.confirm('Удалить это?')) {
+      const updatedItems = items.filter(item => item.id !== id);
+      const json = JSON.stringify(updatedItems);
+      localStorage.setItem('cart', json);
+      dispatch(removeItem(id));
+    }
   };
+
+  console.log('Rendering CartItem:', { id, title, price, count, image, totalCount });
 
   return (
     <div className={styles.itemCart}>
       <Link to={`/product/${id}/${encodeURIComponent(title)}/${price}/${encodeURIComponent(image)}/${id}`}>
         <img className={styles.CartImage} src={image}></img>
-        </Link>
-      <div className={styles.price}>{price* count}₽</div>
-      <div className={styles.title}>{title} ({count}) </div>
+      </Link>
+      <div className={styles.price}>{price * count}₽</div>
+      <div className={styles.title}>
+        {title} ({count}){' '}
+      </div>
       <div className={styles.CountBox}>
-        <button onClick= {onClickPlus}className={styles.btn}> + </button>
-          <div>{count}</div>
-        <button onClick={count > 1 ? onClickMinus : onClickRemove}  className={styles.btn}> - </button>
-
-
+        <button onClick={onClickPlus} className={styles.btn}>
+          {' '}
+          +{' '}
+        </button>
+        <div>{count}</div>
+        <button onClick={count > 1 ? onClickMinus : onClickRemove} className={styles.btn}>
+          {' '}
+          -{' '}
+        </button>
       </div>
       <div className={styles.removeBox} onClick={onClickRemove}>
         <svg width="17px" height="17px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
