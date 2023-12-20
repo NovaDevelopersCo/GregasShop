@@ -31,6 +31,7 @@ justify-content: center;
 
   }
     .itemCart {
+      box-sizing: content-box;
       display: flex;
       background-color: #f8fafc;
       max-width: 700px;
