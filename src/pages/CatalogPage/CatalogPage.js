@@ -25,8 +25,9 @@ export const CatalogPage = () => {
                 </div>
               </section>
               <section>
-                {subcategories.map((subtitle, subIndex) => (
-                  <Link to={`/Catalog/${subtitle}`} key={subIndex} className="CategoryBoxItems">{subtitle}</Link>
+                {subcategories.map((tag, subIndex) => (
+                  // <Link to={`/catalogget/${tag}`} key={subIndex} className="CategoryBoxItems">{tag}</Link>
+                  <Link to={`/catalogget`} key={subIndex} className="CategoryBoxItems">{tag}</Link>
                 ))}
               </section>
             </div>
