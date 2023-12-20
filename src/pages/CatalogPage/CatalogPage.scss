@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1242px;
+    //max-width: 1242px;
+    margin-top: 10px;
 }
 
 .CategoryBox {
@@ -46,4 +47,13 @@ h5 {
     text-align: center;
     font-size: 25px;
     font-weight: 100;
+}
+@media (max-width: 1024px) {
+    .CategoryBoxWrapper {
+        flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    font-size: 16px;
+  }
 }

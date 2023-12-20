@@ -1,0 +1,124 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  .content {
+    width: 60%;
+    height: 85vh;
+    background-color: #fdfdff;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10%;
+    color: #313030;
+
+    .back {
+      color: black;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    .topTitle {
+      margin: 0 auto;
+      padding: 20px;
+      width: 97%;
+      text-align: center;
+      background-color: #f1f5f8;
+      border-radius: 10px;
+      font-size: 20px;
+      line-height: 40px;
+      color: #313030;
+      box-shadow: 0px 5px 5px 1px rgba(241, 245, 248, 0.5);
+
+      p {
+        margin: 10px 0;
+      }
+    }
+
+    .orders,
+    .userData {
+      background-color: #f1f5f8;
+      width: 97%;
+      min-height: 30%;
+      margin: 3% auto;
+      display: flex;
+      border-radius: 10px;
+      flex-direction: column;
+
+      .titleOrders,
+      .userTitle {
+        width: 100%;
+        text-align: center;
+
+        .subtitle {
+          border-bottom: 1px solid #0808082d;
+          margin-bottom: 2%;
+        }
+      }
+
+      .order {
+        margin-left: 4%;
+      }
+
+      .price {
+        margin-left: auto;
+      }
+    }
+    .userInfo{
+      margin: 2%;
+      li{
+        list-style: none;
+        margin-bottom: 2%;
+      }
+  
+    }
+  }
+  @media(max-width: 630px){
+  .content{
+    width: 90%;
+    height: 90%;
+  }
+    h1{
+      font-size: 80%;
+    }
+    p {
+      font-size: 70%;
+    }
+
+}
+}
+.root {
+  width: 400px;
+  padding: 50px;
+  border: 1px solid #dedede;
+  margin: 150px auto;
+  .line{
+    background-color: #0000002a;
+    height: 1px;
+    margin: 10px;
+  }
+  .text{
+    display: flex;
+    justify-content: center;
+    margin-top: -15px;
+  }
+  .btn {
+    background-color:#c91332;
+    margin-bottom: 50px;
+
+    &:hover {
+      background-color: #6d101f;
+      border-color: #790d1f;
+      box-shadow: none;
+    }
+    &:active {
+      box-shadow: none;
+      background-color: #571520;
+      border-color: #800b1f;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.5);
+    }
+  }
+}
+

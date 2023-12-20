@@ -1,304 +1,71 @@
-
-body {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-
-
 .HitSliderText {
-    font-size: 20px;
-    color:rgb(89, 88, 88);
-    font-weight: 2;
-    margin-left: 44px;
+  font-family: 'Montserrat';
+  font-size: 1.5em; /* Использование em для более адаптивного размера шрифта */
+  color: rgb(89, 88, 88);
+  font-weight: 2;
+  margin-left: 20.5%; /* Использование процентов вместо фиксированных пикселей */
+  margin-bottom: 2%; /* Использование процентов вместо фиксированных пикселей */
+  transition: font-size 0.3s ease, margin-left 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1.6em;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 425px) {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 1em; /* Использование em для более адаптивного отступа */
+  }
 }
 
 .HitPhotos {
-    display:flex;
-    margin-top: 20px;
-    justify-content: center;
+  display: flex;
+  margin-top: 18px;
+  justify-content: center;
 }
 
 .HitPhotos img {
-    width: 258px;
-    height: 258px;
-    border-radius: 0px;
-    border: 1px solid #00000000;
-    margin: 20px;
-    margin-top: 10px;
-}
-
-.Container {
-    position: relative;
-    border: 2px solid #c0c0c05f;
-    width: 300px;
-    height: 420px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Boba {
-    margin-top: 300px;
-    margin-left: -180px;
-    font-family: sans-serif;
-    color: black;
-    z-index: 1;
-}
-
-.Boba .link {
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    z-index: 1;
-}
-
-.Noodle {
-    margin-top: 300px;
-    margin-left: -180px;
-    font-family: sans-serif;
-    color: black;
-    z-index: 1;
-}
-
-.Noodle .link {
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    z-index: 1;
-}
-
-.IceCream {
-    margin-top: 300px;
-    margin-left: -180px;
-    font-family: sans-serif;
-    color: black;
-    z-index: 1;
-}
-
-.IceCream .link {
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    z-index: 1;
-}
-
-.Soda {
-    margin-top: 300px;
-    margin-left: -180px;
-    font-family: sans-serif;
-    color: black;
-    z-index: 1;
-}
-
-.Soda .link {
-    text-decoration: none;
-    color:rgb(0, 0, 0);
-    z-index: 1;
-}
-
-.BobaStock {
-    margin-top: 5px;
-    margin-left: -5px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.BobaSold {
-    margin-top: 5px;
-    margin-left: -15px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.NoodleStock {
-    margin-top: 5px;
-    margin-left: -5px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.NoodleSold {
-    margin-top: 5px;
-    margin-left: -15px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.IceCreamStock {
-    margin-top: 5px;
-    margin-left: -5px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.IceCreamSold {
-    margin-top: 5px;
-    margin-left: -15px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.SodaStock {
-    margin-top: 5px;
-    margin-left: -5px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.SodaSold {
-    margin-top: 5px;
-    margin-left: -15px;
-    font-size: 11px;
-    color:rgba(0, 0, 0, 0.623);
-}
-
-.BobaPrice {
-    margin-top: -10px;
-    margin-left: 120px;
-    font-size: 20px;
-    color:black;
-}
-
-.NoodlePrice {
-    margin-top: -10px;
-    margin-left: 120px;
-    font-size: 20px;
-    color:black;
-}
-
-.IceCreamPrice {
-    margin-top: -10px;
-    margin-left: 120px;
-    font-size: 20px;
-    color:black;
-}
-
-.SodaPrice {
-    margin-top: -10px;
-    margin-left: 120px;
-    font-size: 20px;
-    color:black;
-}
-
-.BobaStockPrice {
-    margin-top: -10px;
-    margin-left: 120px;
-    font-size: 20px;
-    color:black;
-}
-
-.image-container {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-}
-
-.image-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-25deg);
-    transition: left 0.5s;
-}
-
-.image-container:hover::before {
-    left: 100%;
-}
-
-.shine-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-25deg);
-    opacity: 0; 
-    transition: opacity 0.5s; 
-}
-
-.image-container:hover .shine-effect {
-    opacity: 1;
-}
-
-.expand-details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: red;
-    text-align: center;
-    opacity: 0;
-    transition: height 0.5s, opacity 0.4s;
-    z-index: 2;
-}
-
-.Container:hover .expand-details {
-    height: 23px;
-    opacity: 1;
-}
-
-.details-button {
-    margin-top: 0px;
-    padding: 0px 123.8px;
-    color: white;
-    border: 10;
-    cursor: pointer;
-    background-color: red;
-    z-index: 3;
-    text-decoration: none;
+  width: 258px;
+  height: 258px;
+  border-radius: 0px;
+  border: 1px solid #00000000;
+  margin: 20px;
+  margin-top: 10px;
 }
 @media (max-width: 1024px) {
-    .HitPhotos,.HitSlider, .body{
-        flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-        margin-left: auto; /* Центрируем блоки по горизонтали */
-        margin-right: auto;
-        width: 85%; /* Занимают 50% ширины родительского контейнера */
-        font-size: 16px;
-    }
-   
-    
+  .HitPhotos,.HitSlider{
+      flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+      margin-left: auto; /* Центрируем блоки по горизонтали */
+      margin-right: auto;
+      width: 85%; /* Занимают 50% ширины родительского контейнера */
+      font-size: 16px;
   }
+ 
+  
+}
 @media (max-width: 768px) {
-        .HitSlider, .body{
-      flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-      margin-left: 32.7%; /* Центрируем блоки по горизонтали */
-      width: 50%; /* Занимают 50% ширины родительского контейнера */
-    }
-    .HitSliderText{
-        margin-left: 268px;
-    }
-  }
-@media (max-width: 425px) {
-    .HitPhotos,.HitSlider, .body {
-      flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-      margin-left: 35.5%; /* Центрируем блоки по горизонтали */
-      width: 50%; /* Занимают 50% ширины родительского контейнера */
-    }
-    .HitSliderText{
-        margin-left: 330px;
+      .HitSlider{
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    width: 50%; /* Занимают 50% ширины родительского контейнера */
   }
 }
+@media (max-width: 425px) {
+
+}
 @media (max-width: 375px) {
-    .HitPhotos,.HitSlider, .body{
-      flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-      margin-left: 35.5%; /* Центрируем блоки по горизонтали */
-      width: 50%; /* Занимают 50% ширины родительского контейнера */
-    }
-    .HitSliderText{
-        margin-left: 330px;
-    }
+ .HitSlider{
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    width: 50%; /* Занимают 50% ширины родительского контейнера */
   }
 
+}
+
 @media (max-width: 320px) {
-    .HitPhotos,.HitSliderText,.HitSlider, .body{
-      flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-      margin-left: 36.5%; /* Центрируем блоки по горизонтали */
-      width: 50%; /* Занимают 50% ширины родительского контейнера */
-    }
-    .HitSliderText{
-        margin-left: 335px;
-    }
+  .HitSlider{
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    width: 50%; /* Занимают 50% ширины родительского контейнера */
   }
+
+}

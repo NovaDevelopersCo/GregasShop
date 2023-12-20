@@ -1,292 +1,58 @@
-/* Footer.scss */
 #footer {
-  hr.grad {
-    border: none;
-    height: 2px;
-    background: black;
-  }
 
-  .AllCountainer {
+  .footer-container {
     display: flex;
     justify-content: space-around;
-    width: 1231px;
-    height: 333px;
-    flex-shrink: 0;
+    max-width: 80vw;
+    height: auto;
+    flex-wrap: wrap;
+    margin: 20px auto;
   }
 
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
+  .footer-section {
     color: #000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Inter;
+    font-family: 'Montserrat';
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-  }
+    margin-bottom: 20px;
 
-  /* Стили для блока "Компания" и подразделов */
-  .Company {
     strong {
       color: #000;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
+      font-family: 'Montserrat';
       font-size: 20px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      display: block;
+      margin-bottom: 10px;
     }
 
-    .About.company {
-      padding-top: 20px;
-    }
-    .Stock {
+    a {
       color: #000;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
-
-  /* Стили для блока "Информация" и подразделов */
-  .Information {
-    strong {
-      color: #000;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
+      text-decoration: none;
     }
 
-    .Wholesale {
-      padding-top: 20px;
-    }
-    .Payment.methods,
-    .Delivery.terms {
-      color: #000;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-  }
-
-  /* Стили для блока "Способы связи" и иконок соцсетей */
-  .Communication.methods {
-    strong {
-      color: #000;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
+    .about-company,
+    .wholesale,
+    .social-links,
+    .contact-info {
+      display: flex;
+      flex-direction: column;
     }
 
-    .Instagramm,
-    .Telegramm {
-      color: #000;
-      text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      padding-top: 0px;
-
-      a {
-        display: inline-block;
-        padding-top: 0px;
-
-        svg {
-          width: 37px;
-          height: 47px;
-          padding-top: 20px;
-        }
-      }
-    }
-  }
-
-  /* Стили для блока "Наши контакты" */
-  .СontainerOurContact {
-    width: 218px;
-height: 241px;
-flex-shrink: 0;
-    strong {
-      color: #000;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      padding-top: 20px;
+    .about-company a,
+    .wholesale a,
+    .social-links a,
+    .contact-info a {
+      margin-bottom: 10px;
     }
 
-    .Telefon.number {
-      color: #000;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      padding-top: 20px;
+    .address {
+      margin-top: 10px;
     }
-
-    .email.block {
-      color: #000;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      .work-time__text1 {
-        color: #000;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-family: Inter;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
-    }
-
-    .work-time {
-      .work-time__text {
-        color: #000;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-family: Inter;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
-    }
-  }
-}
-
-@media (max-width: 2560px) {
-  .AllCountainer {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: auto; /* Центрируем блоки по горизонтали */
-    margin-right: auto;
-    width: 90%; /* Занимают 50% ширины родительского контейнера */
-    margin-bottom: 30px; /* Увеличиваем расстояние между блоками */
-  }
-
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
-    margin-right: 40px; /* Добавляем отступ между контейнерами */
-  }
-}
-@media (max-width: 1600px) {
-  .AllCountainer {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: auto; /* Центрируем блоки по горизонтали */
-    margin-right: auto;
-    width: 100%; /* Занимают 50% ширины родительского контейнера */
-    margin-bottom: 30px; /* Увеличиваем расстояние между блоками */
-  }
-
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
-    margin-right: 40px; /* Добавляем отступ между контейнерами */
-  }
-}
-@media (max-width: 1366px) {
-  .AllCountainer {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: auto; /* Центрируем блоки по горизонтали */
-    margin-right: auto;
-    width: 80%; /* Занимают 50% ширины родительского контейнера */
-    margin-bottom: 30px; /* Увеличиваем расстояние между блоками */
-  }
-
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
-    margin-right: 40px; /* Добавляем отступ между контейнерами */
-  }
-}
-@media (max-width: 1024px) {
-  .AllCountainer,
-  footer {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 5%; /* Центрируем блоки по горизонтали */
-    margin-right: auto;
-    width: 94%; /* Занимают 50% ширины родительского контейнера */
-    margin-bottom: 0px; /* Увеличиваем расстояние между блоками */
-  }
-
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
-    margin-right: 40px; /* Добавляем отступ между контейнерами */
-  }
-}
-@media (max-width: 768px) {
-  .AllCountainer,
-  footer {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 13%; /* Центрируем блоки по горизонтали */
-    width: 85%; /* Занимают 50% ширины родительского контейнера */
-    margin-bottom: 40px; /* Увеличиваем расстояние между блоками */
-  }
-
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
-    margin-right: 80px; /* Добавляем отступ между контейнерами */
-  }
-}
-@media (max-width: 425px) {
-  .AllCountainer,
-  footer {
-    margin-left: 20%; /* Центрируем блоки по горизонтали */
-    width: 80%; /* Занимают 50% ширины родительского контейнера */
-    margin-bottom: 30px; /* Увеличиваем расстояние между блоками */
-  }
-
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
-    margin-right: 80px; /* Добавляем отступ между контейнерами */
-  }
-}
-@media (max-width: 320px) {
-  .AllCountainer,
-  footer {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 21%; /* Центрируем блоки по горизонтали */
-    margin-right: 0;
-    width: 80%; /* Занимают 50% ширины родительского контейнера */
-    margin-bottom: 30px; /* Увеличиваем расстояние между блоками */
-  }
-
-  .СontainerCompany,
-  .СontainerInformation,
-  .СontainerComunication,
-  .СontainerOurContact {
-    margin-right: 40px; /* Добавляем отступ между контейнерами */
   }
 }

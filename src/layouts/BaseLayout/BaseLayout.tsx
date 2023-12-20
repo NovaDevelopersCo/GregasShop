@@ -1,4 +1,3 @@
-import React from 'react';
 import { Header } from '../../Components';
 import { Outlet } from 'react-router-dom';
 import { Footer } from '../../Components';
@@ -9,7 +8,9 @@ export const BaseLayout = () => {
   return (
     <div className="App">
       <SearchProvider>
-        <Header />
+        <div className='HeaderWrapper'>
+          <Header />
+        </div>
         <Outlet />
         <Footer />
       </SearchProvider>

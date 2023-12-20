@@ -1,0 +1,52 @@
+h1 {
+    width: auto; 
+}
+
+.box {
+    position: relative;
+    font-family: 'Montserrat';
+    max-width: 80%;
+    flex-wrap: wrap;
+    font-size: 130%;
+    margin: 0 auto;
+    
+  }
+
+
+.ul {
+    margin-left: 2%;
+    font-size: 24px;
+    max-width: 90%;
+}
+
+li::marker {
+    color: rgb(232, 42, 9);
+}
+
+.p {
+    margin-bottom: 32px;
+    font-weight: 400;
+    font-size: 40px;
+    color: #000;
+    font-family: 'Montserrat';
+    line-height: normal;
+    font-style: normal;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 26px;
+}
+@media (max-width:540px) {
+    .box {
+        font-size: 5vw;
+      }
+} 

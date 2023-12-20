@@ -1,15 +1,22 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .NewSliderText {
-  font-size: 20px;
+  font-family: 'Montserrat';
+  font-size: 1.5em; /* Использование em для более адаптивного размера шрифта */
   color: rgb(89, 88, 88);
   font-weight: 2;
-  margin-left: 44px;
-  margin-bottom: 20px;
+  margin-left: 20.5%; /* Использование процентов вместо фиксированных пикселей */
+  margin-bottom: 2%; /* Использование процентов вместо фиксированных пикселей */
+  transition: font-size 0.3s ease, margin-left 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1.6em;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 1.4em;
+    margin-bottom: 1em; /* Использование em для более адаптивного отступа */
+  }
 }
 
 .NewPhotos {
@@ -26,287 +33,36 @@ body {
   margin: 20px;
   margin-top: 10px;
 }
-
-.Container {
-  position: relative;
-  border: 2px solid #c0c0c05f;
-  width: 300px;
-  height: 420px;
-  display: flex;
-}
-
-.Boba {
-  margin-top: 300px;
-  margin-left: -180px;
-  font-family: sans-serif;
-  color: black;
-  z-index: 1;
-}
-
-.Boba .link {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  z-index: 1;
-}
-
-.Noodle {
-  margin-top: 300px;
-  margin-left: -180px;
-  font-family: sans-serif;
-  color: black;
-  z-index: 1;
-}
-
-.Noodle .link {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  z-index: 1;
-}
-
-.IceCream {
-  margin-top: 300px;
-  margin-left: -180px;
-  font-family: sans-serif;
-  color: black;
-  z-index: 1;
-}
-
-.IceCream .link {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  z-index: 1;
-}
-
-.Soda {
-  margin-top: 300px;
-  margin-left: -180px;
-  font-family: sans-serif;
-  color: black;
-  z-index: 1;
-}
-
-.Soda .link {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  z-index: 1;
-}
-
-.BobaStock {
-  margin-top: 30px;
-  margin-left: -5px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.BobaSold {
-  margin-top: 5px;
-  margin-left: -15px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.NoodleStock {
-  margin-top: 30px;
-  margin-left: -5px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.NoodleSold {
-  margin-top: 5px;
-  margin-left: -15px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.IceCreamStock {
-  margin-top: 30px;
-  margin-left: -5px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.IceCreamSold {
-  margin-top: 5px;
-  margin-left: -15px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.SodaStock {
-  margin-top: 30px;
-  margin-left: -5px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.SodaSold {
-  margin-top: 5px;
-  margin-left: -15px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-.BobaPrice {
-  margin-top: -10px;
-  margin-left: 120px;
-  font-size: 20px;
-  color: black;
-}
-
-.NoodlePrice {
-  margin-top: -10px;
-  margin-left: 120px;
-  font-size: 20px;
-  color: black;
-}
-
-.IceCreamPrice {
-  margin-top: -10px;
-  margin-left: 120px;
-  font-size: 20px;
-  color: black;
-}
-
-.SodaPrice {
-  margin-top: -10px;
-  margin-left: 120px;
-  font-size: 20px;
-  color: black;
-}
-
-.BobaStockPrice {
-  margin-top: -10px;
-  margin-left: 120px;
-  font-size: 20px;
-  color: black;
-}
-
-.image-container {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.image-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-25deg);
-  transition: left 0.5s;
-}
-
-.image-container:hover::before {
-  left: 100%;
-}
-
-.shine-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-25deg);
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.image-container:hover .shine-effect {
-  opacity: 1;
-}
-
-.expand-details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: red;
-  text-align: center;
-  opacity: 0;
-  transition: height 0.5s, opacity 0.4s;
-  z-index: 2;
-}
-
-.Container:hover .expand-details {
-  height: 23px;
-  opacity: 1;
-}
-
-.details-button {
-  margin-top: 0px;
-  padding: 0px 123.8px;
-  color: white;
-  border: 10;
-  cursor: pointer;
-  background-color: red;
-  z-index: 3;
-  text-decoration: none;
-}
 @media (max-width: 1024px) {
-  body,
-  .NewSlider,
-  .NewPhotos {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 14%; /* Центрируем блоки по горизонтали */
-    width: 85%; /* Занимают 50% ширины родительского контейнера */
-    font-size: 16px;
+  .NewPhotos,.NewSlider{
+      flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+      margin-left: auto; /* Центрируем блоки по горизонтали */
+      margin-right: auto;
+      width: 85%; /* Занимают 50% ширины родительского контейнера */
+      font-size: 16px;
   }
+ 
+  
 }
 @media (max-width: 768px) {
-  body,
-  .NewSlider {
+      .NewSlider{
     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 36.4%; /* Центрируем блоки по горизонтали */
     width: 50%; /* Занимают 50% ширины родительского контейнера */
-  }
-  .NewSliderText {
-    margin-left: 35.5%;
-    margin-bottom: 20px;
   }
 }
 @media (max-width: 425px) {
-  body,
-  .NewSlider,
-  .NewPhotos {
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 53.3%; /* Центрируем блоки по горизонтали */
-    width: 50%; /* Занимают 50% ширины родительского контейнера */
-  }
-  .NewSliderText {
-    margin-left: 110px;
-  }
+
 }
 @media (max-width: 375px) {
-  body,
-  .NewSlider,
-  .NewPhotos {
+ .NewSlider{
     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 53.3%; /* Центрируем блоки по горизонтали */
     width: 50%; /* Занимают 50% ширины родительского контейнера */
   }
 }
+
 @media (max-width: 320px) {
-  body,
-  .NewSlider,
-  .NewPhotos {
+  .NewSlider{
     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    margin-left: 54.8%; /* Центрируем блоки по горизонтали */
     width: 50%; /* Занимают 50% ширины родительского контейнера */
   }
 }

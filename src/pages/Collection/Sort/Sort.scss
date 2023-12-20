@@ -1,54 +1,117 @@
-$orange:#ce191f;
+/* Общие стили */
 .sort {
-    position: relative;
-    right: -470px;
-    top: -35px;
-    &__label {
-      display: flex;
-      align-items: center;
-      
-      svg {
-        margin-right: 8px;
+  position: relative;
+  margin-right: 0;
+  left: 425px;
+  top: -45px;
+}
+
+.sort__label {
+  display: flex;
+  align-items: center;
+
+  .svgSort {
+    margin-right: 8px;
+  }
+
+  .sortOf {
+    margin-right: 8px;
+  }
+
+  span {
+    color: #ce191f;
+    border-bottom: 1px dashed #ce191f;
+    cursor: pointer;
+  }
+}
+
+.sort__popup {
+  position: absolute;
+  right: 0;
+  margin-top: 15px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px 0;
+  z-index: 1;
+
+  ul {
+    li {
+      padding: 12px 20px;
+      cursor: pointer;
+
+      &.active,
+      &:hover {
+        background: rgba(254, 95, 30, 0.05);
       }
-  
-      b {
-        margin-right: 8px;
-      }
-  
-      span {
-        color: $orange;
-        border-bottom: 1px dashed $orange;
-        cursor: pointer;
-      }
-    }
-  
-    &__popup {
-      position: absolute;
-      right: 0;
-      margin-top: 15px;
-      background: #ffffff;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
-      border-radius: 10px;
-      overflow: hidden;
-      padding: 10px 0;
-      z-index: 1;
-  
-      ul {
-        overflow: hidden;
-        li {
-          padding: 12px 20px;
-          cursor: pointer;
-  
-          &.active,
-          &:hover {
-            background: rgba(254, 95, 30, 0.05);
-          }
-  
-          &.active {
-            font-weight: bold;
-            color: $orange;
-          }
-        }
+
+      &.active {
+        font-weight: bold;
+        color: #ce191f;
       }
     }
   }
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 853px) {
+  .sort,
+  .sort__label {
+
+    top: -60px;
+    left: 225px;
+  }
+
+  .sort__label {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .svgSort {
+      display: none;
+    }
+
+    .sortOf {
+      margin-bottom: 8px;
+    }
+
+
+  }
+
+  .sort__popup {
+    right: 0;
+    margin-top: 8px;
+
+  }
+
+  .sortOf {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sort,
+  .sort__label {
+
+    top: -60px;
+    left: 225px;
+  }
+
+  .categories {
+    margin-left: 8%;
+  }
+
+  
+  .svgSort {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .sort,
+  .sort__label {
+
+    top: -60px;
+    left: 105px;
+  }
+}

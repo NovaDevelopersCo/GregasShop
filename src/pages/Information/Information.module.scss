@@ -1,0 +1,29 @@
+.h1{
+    width: 40px;
+    
+}
+.box{
+    margin-left: 110px;
+    // display: flex;
+    justify-content: left;
+    width: 900px;
+    font-family: "poppins-regular", sans-serif;
+    
+    margin-top: 20px;
+}
+
+.ul { 
+    margin-left: 35px;
+}
+li::marker {
+    color: hotpink;
+    }
+
+.p{
+    margin-left: 90px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 26px;
+}

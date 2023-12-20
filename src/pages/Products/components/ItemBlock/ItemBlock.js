@@ -3,11 +3,12 @@ import './ItemBlock.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addItem } from '../../../../redux/slices/CartSlice';
+import { addItem } from '../../../../redux/slices/cart/CartSlice';
+import { selectCartItemById } from '../../../../redux/slices/itemSlice';
 
-export const ItemBlock = ({ title, price, image, rating, id }) => {
+export const ItemBlock = ({ title, price, image,viewsCount, id }) => {
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) => state.CartSlice.items.find((obj) => obj.id === id));
+  const cartItem = useSelector(selectCartItemById(id));
 
   const addedCount = cartItem ? cartItem.count : 0;
 
@@ -23,37 +24,47 @@ export const ItemBlock = ({ title, price, image, rating, id }) => {
         <Link to={`/product/${id}/${encodeURIComponent(title)}/${price}/${encodeURIComponent(image)}/${id}`}>
           <div className="Item-container">
             <div className="image-container">
-              <img key={image} src={image} alt="Product 1" />
+              <img className="image-item" key={image} src={image} alt="Product 1" />
             </div>
             <p className="ItemBlockParag">
               <a key={title} href="/home/" className="link">
                 {title}
               </a>
               <a href="/home/"></a>
+              <p key={price} className="Price">
+                {price}₽
+              </p>
               <p className="Stock">
-                В Наличии &#10004; 1
+                В наличии: <b>666</b>
+                <div className="line"></div>
                 <p className="Sold">
-                  Продано За Месяц &#10004; <b className="Rating">{rating}</b>
+                  Продано за месяц: <b>{viewsCount} шт</b>
                 </p>
-                <p key={price} className="Price">
-                  Цена: {price} <span className="ScoreBtn">{addedCount > 0 && <span>{addedCount}</span>}</span>
-                </p> 
               </p>
             </p>
           </div>
         </Link>
       </div>
-     
-      <button
-        onClick={onClickAdd}
-        type="button"
-        class="addtoButton btn-danger"
-        data-toggle="button"
-        aria-pressed="false"
-        autocomplete="off"
-      >
-        +
-      </button>
+
+      {addedCount > 0 ? (
+        <button
+          type="button"
+          className="addtoButton-active"
+          data-toggle="button"
+          aria-pressed="false"
+          autocomplete="off"
+        >
+          <span onClick={onClickAdd} className="ScoreBtn">
+            Добавлено ({addedCount})
+          </span>
+        </button>
+      ) : (
+        <button type="button" className="addtoButton" data-toggle="button" aria-pressed="false" autocomplete="off">
+          <span onClick={onClickAdd} className="ScoreBtn">
+            В корзину
+          </span>
+        </button>
+      )}
     </div>
   );
 };

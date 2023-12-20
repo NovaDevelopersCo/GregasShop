@@ -1,0 +1,40 @@
+.root {
+  width: 400px;
+  padding: 50px;
+  border: 1px solid #dedede;
+  margin: 150px auto;
+}
+
+.field {
+  margin-bottom: 20px !important;
+}
+
+.title {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-bottom: 30px !important;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.btn {
+  background-color: #c91332;
+  margin-bottom: 50px;
+
+  &:hover {
+    background-color: #6d101f;
+    border-color: #790d1f;
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: none;
+    background-color: #571520;
+    border-color: #800b1f;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+}

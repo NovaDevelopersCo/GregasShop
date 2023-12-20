@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FotoButton, New, Slider, NewsWall, Text, Hit } from './components';
+import  style  from './Products.module.scss';
+
 
 export const Products = () => {
   const navigate = useNavigate();
@@ -13,14 +15,15 @@ export const Products = () => {
     <>
       <Slider />
       <FotoButton />
-      <hr className="grad" />
+      <hr className={style.grad} />
       <New />
-      <hr className="grad" />
+      <hr className={style.grad} />
       <Hit />
-      <hr className="grad" />
+       <hr className={style.grad} />
       <NewsWall />
-      <hr className="grad" />
+       <hr className={style.grad} />
       <Text />
+      <hr className={style.grad} />
     </>
   );
 };

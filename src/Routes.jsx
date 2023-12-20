@@ -12,6 +12,11 @@ import { Information } from './pages/Information/Information';
 import { Cartpage } from './pages/Cartpage/Cartpage';
 import { Personalacc } from './pages/Personalacc/Personalacc';
 import { CatalogPage } from './pages/CatalogPage/CatalogPage';
+import { Login } from './pages/Login';
+import { Hits } from './pages/Hits/Hits';
+import { Registration } from './pages/Registration';
+import UserPage from './pages/userPage/UserPage';
+import { CatalogGet } from './pages/catalogGet/CatalogGet';
 
 export const routes = [
   {
@@ -32,7 +37,7 @@ export const routes = [
       },
       {
         path: 'deals',
-        element: < Deals />,
+        element: <Deals />,
       },
       {
         path: 'wholesale',
@@ -43,11 +48,11 @@ export const routes = [
         element: <Payment />,
       },
       {
-        path:'cargo',
-        element: <Cargo />
+        path: 'cargo',
+        element: <Cargo />,
       },
       {
-        path: 'collection',
+        path: 'all',
         element: <Collection />,
       },
       {
@@ -71,13 +76,32 @@ export const routes = [
         element: <Information />,
       },
       {
-        path:'cartpage',
-        element: <Cartpage />
+        path: 'cartpage',
+        element: <Cartpage />,
       },
       {
-        path:'personalacc',
-        element: <Personalacc />
+        path: 'personalacc',
+        element: <Personalacc />,
       },
+      {
+        path: 'hits',
+        element: <Hits />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'register',
+        element: <Registration />,
+      },{
+        path: 'userpage',
+        element: <UserPage />,
+      },
+      {
+        path: 'catalogget',
+        element: <CatalogGet />,
+      }
     ],
   },
 ];

@@ -1,16 +1,22 @@
 .Wrapper {
   display: flex;
-  flex-direction: column;
+  margin: 100px;
+  justify-content: center;
+  .content{
+display: flex;
+
+  }
   .Top{
-    
+display: flex;
+justify-content: center;
     .title {
       font-size: 30px;
-      margin-left: 10px;
-     
+
+
     }
     .back{
       font-size: 20px;
-      margin-left: 900px;
+      margin-left: 15px;
       background-color: #d43447;
       padding: 5px;
       border-radius: 5px;
@@ -22,28 +28,27 @@
     }
   }
   .CartItems{
-   margin-top:-420px ; 
-   margin-bottom: 200px;
-  }
 
-  .itemCart {
-    display: flex;
-    background-color: #f8fafc;
-    width: 750px;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top:20px;
-    margin-bottom: 5px;
-    box-shadow: 1px 1px 5px 1px rgba(78, 76, 76, 0.1);
-    img {
-      height: 120px;
-      width: 120px;
-      margin-left: 10px;
-      
-    }
+  }
+    .itemCart {
+      display: flex;
+      background-color: #f8fafc;
+      max-width: 700px;
+      width: 50vw;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top:20px;
+      margin-bottom: 5px;
+      box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.1);
+      min-width: 300px;
+      img {
+        height: 120px;
+        width: 120px;
+        margin-left: 10px;
+
+      }
+
     .removeBox {
-      position: absolute;
-      margin-left: 950px;
       cursor: pointer;
       background-color: #e8eef5;
       border-radius: 10px;
@@ -58,16 +63,18 @@
         transition-delay: 0.05s;
       }
     }
+
+
     .title {
       position: absolute;
       margin-left: 155px;
       font-size: 19px;
       color:#313030 ;
+      word-spacing: -.3ch;
     }
     .price {
-      margin-left: 660px;
+      margin-left: auto;
       font-size: 20px;
-      position: absolute;
       color:#313030 ;
     }
 
@@ -99,19 +106,22 @@
         font-size: 20px;
         align-self: center;
         cursor: pointer;
+        &:focus{
+          outline: 0;
+        };
       }
     }
   }
-  
+
   .Sidebox {
-    width: 400px;
+margin-left: auto;
+    width: 100%;
     height: 300px;
     background-color: #fdfdff;
-    margin-left: 820px;
     margin-top:20px;
     border-radius: 5px;
     box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.1);
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     color:#313030 ;
     .CartName {
       text-align: center;
@@ -122,12 +132,12 @@
       line-height: 40px;
       color:#313030 ;
       box-shadow: 0px 5px 5px 1px rgba(241,245,248,0.5);
-      
+
     }
     .WrapperSum{
       margin-top: 20px;
       font-size: 17px;
-      
+
       .sumItem{
         float: left;
         margin-left: 30px;
@@ -135,7 +145,7 @@
       .sumPrice{
         float:right;
         font-size: 16px;
-        margin-right: 50px; 
+        margin-right: 50px;
       }
 
     }
@@ -150,10 +160,37 @@
         font-size: 18px;
         padding: 10px;
         border-radius: 5px;
-        margin-top: 130px; 
+        margin-top: 130px;
       }
 
     }
-    
+
+  }
+  @media (max-width: 725px) {
+    .itemCart{
+
+      .title{
+        margin-left: 145px;
+        font-size: 15px;
+      }
+      .price{
+        font-size: 15px;
+      }
+      .CountBox {
+        width: 60px;
+        height: 20px;
+        margin-top: 90px;
+        margin-left: 150px;
+        font-size: 15px;
+
+        .btn{
+          height: 20px;
+font-size: 15px;
+        }
+      }
+      .removeBox {
+        margin-top: auto;
+      }
+    }
   }
 }

@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Foto {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fotoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  margin: 10px; /* Отступ по умолчанию для маленьких экранов */
+}
+
+.fotoItem img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 2px;
+}
+
+.Foto p {
+  margin-top: 10px;
+  font-family: sans-serif;
+  color: black;
+  text-align: center;
+}
+
+/* Медиа-запросы для различных устройств */
+
+@media (min-width: 768px) {
+  .fotoItem {
+    margin: 5px;
+  }
+
+  .fotoItem img {
+    max-width: 150px; /* Уменьшаем ширину изображения для устройств с шириной экрана от 768px до 1023px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .fotoItem {
+    margin: 10px;
+  }
+
+  .fotoItem img {
+    max-width: 130px; /* Уменьшаем еще больше для устройств с шириной экрана 1024px и более */
+  }
+}
+
+@media (max-width: 767px) {
+  .fotoItem img {
+    max-width: 120px; /* Уменьшаем для маленьких экранов (телефонов) */
+  }
+}
+
+@media (min-width: 1455px) {
+  .fotoItem {
+    margin: 15px;
+  }
+}
