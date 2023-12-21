@@ -4,6 +4,7 @@ import { addItem, minusItem, removeItem } from '../../redux/slices/cart/CartSlic
 import styles from './Cartpage.module.scss'; // модульность css
 import { Link } from 'react-router-dom';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const CartItem = ({ id, title, price, count, image, totalCount }) => {
   const dispatch = useDispatch();
@@ -25,11 +26,14 @@ const CartItem = ({ id, title, price, count, image, totalCount }) => {
         price,
         count,
       })
-    );
+      );
+      toast.success("Товар добавлен в корзину")
   };
 
   const onClickMinus = () => {
     dispatch(minusItem(id));
+    toast.error("Товар удалён из корзины")
+   
   };
   const onClickRemove = () => {
     if (window.confirm('Удалить это?')) {
@@ -37,6 +41,7 @@ const CartItem = ({ id, title, price, count, image, totalCount }) => {
       const json = JSON.stringify(updatedItems);
       localStorage.setItem('cart', json);
       dispatch(removeItem(id));
+      toast.error("Товар удалён из корзины")
     }
   };
 
