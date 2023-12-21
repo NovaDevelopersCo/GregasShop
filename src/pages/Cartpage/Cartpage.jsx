@@ -4,17 +4,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearItems, selectCart } from '../../redux/slices/cart/CartSlice';
 import { CartEmpty } from './CartEmtry/CartEmpty';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 export const Cartpage = () => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
-  const е = () => {
-    if (window.confirm('Отчистить Корзину?')) {
-      dispatch(clearItems());
-    }
+
+  const clearCart = () => {
+    toast.promise(
+      new Promise((resolve) => {
+        if (items.length === 0) {
+          toast.error('Корзина уже пуста');
+          resolve();
+          return;
+        }
+        toast.promise(dispatch(clearItems()), {
+          loading: 'Очистка...',
+          success: 'Корзина очищена',
+          error: 'Ошибка при очистке корзины',
+        });
+        resolve();
+      })
+    );
   };
+
 
   if (!totalPrice) {
     return <CartEmpty />;

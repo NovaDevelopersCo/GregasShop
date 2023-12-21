@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Product1.js';
 import { addItem, minusItem } from '../../redux/slices/cart/CartSlice.js';
 import { selectCartItemById } from '../../redux/slices/itemSlice.js';
+import toast from 'react-hot-toast';
 
 export const Product = () => {
   const dispatch = useDispatch();
@@ -17,10 +18,12 @@ export const Product = () => {
   const addToCart = () => {
     const item = { price, id, title, image };
     dispatch(addItem(item));
+    toast.success("Товар добавлен в корзину")
   };
   const removeFromCart = () => {
     const item = { price, id, title, image };
     dispatch(minusItem(id));
+    toast.error("Товар удалён из корзины")
   };
 
 
