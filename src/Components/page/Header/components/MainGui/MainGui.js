@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { logout, selectIsAuth, fetchAuthMe, initializeAuth} from '../../../../../redux/slices/auth';
+import toast from 'react-hot-toast';
 
 export const MainGui = ({ searchValue, setSearchValue }) => {
   const location = useLocation();
@@ -29,6 +30,7 @@ export const MainGui = ({ searchValue, setSearchValue }) => {
     if (window.confirm('Вы действительно хотите выйти?')) {
       dispatch(logout());
       window.localStorage.removeItem('token');
+      toast.error("Вы вышли из аккаунта")
     }
   };
   const handleItemClick = () => {

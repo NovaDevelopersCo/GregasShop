@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-
+import toast from 'react-hot-toast';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
@@ -26,7 +26,7 @@ export const Login = () => {
     const data = await dispatch(fetchAuth(values));
 
     if (!data.payload) {
-      return alert('Не удалось авторизоваться!');
+      return toast.error('Не удалось авторизоваться!');
     }
 
     if ('token' in data.payload) {
@@ -35,7 +35,8 @@ export const Login = () => {
   };
 
   if (isAuth) {
-    return <Navigate to="/" />;
+    return toast.success ("Вы успешно авторизованы"),
+    <Navigate to="/" />;
   }
 
   return (
