@@ -10,6 +10,7 @@ import Avatar from '@mui/material/Avatar';
 
 import styles from './Login.module.scss';
 import { fetchAuth, fetchRegister, selectIsAuth } from '../../redux/slices/auth';
+import toast from 'react-hot-toast';
 
 export const Registration = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -29,7 +30,7 @@ export const Registration = () => {
     const data = await dispatch(fetchRegister(values));
 
     if (!data.payload) {
-      return alert('Не удалось регистрироваться!');
+      return toast.error('Не удалось регистрироваться!');
     }
 
     if ('token' in data.payload) {
@@ -38,7 +39,8 @@ export const Registration = () => {
   };
 
   if (isAuth) {
-    return <Navigate to="/" />;
+    return toast.success("Вы успешно зарегистрировались"),
+     <Navigate to="/" />;
   }
 
   return (
