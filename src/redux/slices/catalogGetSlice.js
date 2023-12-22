@@ -1,12 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from '../../axios';
 
-export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params) => {
-  const {search, currentPage,tags} = params;
+export const fetchCatalog = createAsyncThunk('items/fetchCatalogStatus', async (params) => {
+  const {tag} = params;
   const { data } = await axios.get(
-    `/posts?page=${currentPage}&limit=4&${tags}&keyword=${search}`
+    // `/posts?page=${currentPage}&limit=4&tag=${tags}&keyword=${search}`
+    `/posts?&limit=4&tag=${tag}`
   );
   return data;
+
 });
 
 const initialState = {
@@ -17,30 +19,30 @@ const initialState = {
 };
 
 
- 
-const itemSlice = createSlice({
+
+const CatalogGetSlice = createSlice({
   name: 'items',
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchItems.pending, (state, action) => {
+      .addCase(fetchCatalog.pending, (state, action) => {
         state.status.all = 'loading';
       })
-      .addCase(fetchItems.fulfilled, (state, action) => {
+      .addCase(fetchCatalog.fulfilled, (state, action) => {
         state.status.all = 'success';}
 
         )
-      .addCase(fetchItems.rejected, (state, action) => {
+      .addCase(fetchCatalog.rejected, (state, action) => {
         state.status.all = 'error';
 
       });
   },
 });
 
-export const selectItems = (state) => state.itemSlice;
+export const selectCatalog = (state) => state.CatalogGetSlice;
 export const selectCartItemById = (id) => (state) => state.CartSlice.items.find((obj) => obj.id === id)
 
-export const { setItems } = itemSlice.actions;
+export const { setItems } = CatalogGetSlice.actions;
 
-export default itemSlice.reducer;
+export default CatalogGetSlice.reducer;

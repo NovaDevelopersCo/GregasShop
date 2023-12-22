@@ -2,9 +2,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../../axios';
 
 export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params) => {
-  const { order, SortBy, category, search, currentPage } = params;
+  const { order, SortBy, category, search, currentPage,tag } = params;
   const { data } = await axios.get(
-    `/posts?page=${currentPage}&limit=4&${category}&orderBy=${SortBy}&sortBy=${order}&keyword=${search}`
+    `/posts?page=${currentPage}&limit=4&${category}&orderBy=${SortBy}?tag=${tag}&sortBy=${order}&keyword=${search}`
   );
   return data;
 });
