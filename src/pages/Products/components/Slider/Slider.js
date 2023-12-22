@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 // Import Swiper React components
+import { selectSlider, fetchSlider } from '../../../../redux/slices/sliderSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import photo1 from '../../../../assets/images/food1.jpg';
-import photo2 from '../../../../assets/images/food2.jpg';
-import photo3 from '../../../../assets/images/food3.jpg';
+import { useDispatch, useSelector } from 'react-redux';
+
 // Import Swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -14,7 +14,19 @@ import './Slider.scss';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-export const Slider = () => {  
+export const Slider = () => {
+  const dispatch = useDispatch();
+  const { slider } = useSelector(selectSlider);
+  console.log(slider)
+
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      dispatch(fetchSlider({ itemCategory: 'all'}));
+    };
+
+    fetchProducts();
+  }, [dispatch]);
+
   return (
     <>
       <Swiper
@@ -31,15 +43,11 @@ export const Slider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src={photo1} alt="Food 1" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={photo2} alt="Food 2" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={photo3} alt="Food 3" />
-        </SwiperSlide>
+        {slider.map((obj) => (
+          <SwiperSlide key={obj._id}>
+            <img src={obj.imageUrl} alt="Food" />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
