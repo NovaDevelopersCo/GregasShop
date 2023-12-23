@@ -6,7 +6,6 @@ import { authReducer } from './slices/auth';
 import newsSlice from './slices/newsSlice';
 import sliderSlice from './slices/sliderSlice';
 
-
 export const store = configureStore({
   reducer: { filterSlice, CartSlice,sliderSlice, itemSlice, newsSlice, auth: authReducer, },
 })
