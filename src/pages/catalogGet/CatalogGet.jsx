@@ -33,13 +33,11 @@ export const CatalogGet = () => {
   };
 
   const fetchProducts = async () => {
-    const category = categoryId > 0 ? `category=${categoryId}` : '';
-    const search = searchValue ? `search=${searchValue}` : '';
     const tag = searchParams.get('tag') || '';
+    const search = searchValue ? `&search=${searchValue}` : '';
 
     dispatch(
       fetchItems({
-        category,
         search,
         currentPage,
         itemCategory: 'all',
@@ -49,50 +47,32 @@ export const CatalogGet = () => {
   };
 
   useEffect(() => {
-    if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-      dispatch(
-        setFilters({
-          ...params,
-          sort,
-        })
-      );
-      setSearchParams(params);
-      isSearch.current = true;
-    }
-  }, [setSearchParams, sort]);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
     if (!isSearch.current) {
       fetchProducts();
     }
     isSearch.current = false;
-  }, [categoryId, searchValue, currentPage, searchParams]);
-
+  }, [searchValue, currentPage]);
+  // Если изменили параметры и был первый рендер
   useEffect(() => {
     if (isMounted.current) {
       const queryString = qs.stringify({
-        categoryId,
+        sortProperty: sort.sortProperty,
         currentPage,
-        tag: searchParams.get('tag'),
       });
-      const currentSearch = window.location.search.substring(1);
-      const newQueryString = `?${queryString}`;
-      if (currentSearch !== newQueryString) {
-        navigate(newQueryString);
-      }
+      navigate(`?${queryString}`);
     }
     isMounted.current = true;
-  }, [categoryId, searchValue, currentPage, searchParams, navigate]);
+  }, [ searchValue, currentPage]);
 
   const Skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}></Skeleton>);
   const products = items.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock>);
 
+
+  const tagsH1 = searchParams.get('tag') || 'All';
   return (
     <div className="collection-container">
-      <Categories value={categoryId} onClickCategories={onChangeCategory} />
-      <Sort></Sort>
+      <h1> Товары на тему: {tagsH1} </h1>
       {status.all === 'error' ? (
         <div className='error-alert'>
           <h1>Произошла ошибка!</h1>
