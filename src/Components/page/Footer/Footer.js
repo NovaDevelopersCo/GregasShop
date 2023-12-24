@@ -64,8 +64,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="footer-section">
+          <div className="copyright">
+          <p>&copy; Copyright <span id="currentYear"></span><a href='#'>Gregas shop</a><a href='https://github.com/NovaDevelopersCo'>Our Team</a></p>
+          </div>
+      </div>
+
     </footer>
   );
 };
-
+// document.getElementById("currentYear").innerText = new Date().getFullYear();
 export default Footer;
