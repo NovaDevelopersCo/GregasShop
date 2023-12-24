@@ -16,6 +16,7 @@ import { Login } from './pages/Login';
 import { Hits } from './pages/Hits/Hits';
 import { Registration } from './pages/Registration';
 import UserPage from './pages/userPage/UserPage';
+import { CatalogGet } from './pages/catalogGet/CatalogGet';
 
 export const routes = [
   {
@@ -97,6 +98,10 @@ export const routes = [
         path: 'userpage',
         element: <UserPage />,
       },
+      {
+        path: 'catalogget',
+        element: <CatalogGet />,
+      }
     ],
   },
 ];
