@@ -1,4 +1,4 @@
-.collection-container {
+.categoryGet-container {
   display: flex;
   flex-wrap: wrap;
   // flex-direction: column;
@@ -13,9 +13,7 @@
   justify-content: center;
   width: 100%;
   padding: 20px;
-  min-width: 500px;
 }
-
 
 .error-alert {
   margin: 30px 0;
@@ -45,16 +43,22 @@
   .product-list,
   .error-alert,
   .collection-container-skeleton {
-    width: 100%;
+    width: 90%;
     justify-content: center;
-
   }
-
+  .collection-container{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 
 @media (max-width: 500px) {
   .product-list {
     font-size: 16px;
+
   }
- 
+  .collection-container{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }

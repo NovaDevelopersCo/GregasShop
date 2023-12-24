@@ -1,9 +1,88 @@
 /* Общие стили */
+
+
+.sort {
+  position: fixed;
+  top: 115px; 
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sort__label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sort__label .svgSort {
+  margin-right: 8px;
+}
+
+.sort__label .sortOf {
+  margin-right: 8px;
+}
+
+.sort__label span {
+  color: #ce191f;
+  border-bottom: 1px dashed #ce191f;
+  cursor: pointer;
+}
+
+.sort__popup {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px 0;
+  z-index: 1;
+}
+
+.sort__popup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sort__popup ul li {
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.sort__popup ul li.active,
+.sort__popup ul li:hover {
+  background: rgba(254, 95, 30, 0.05);
+}
+
+.sort__popup ul li.active {
+  font-weight: bold;
+  color: #ce191f;
+}
+
+/* Дополнительные стили для адаптивности */
+@media (max-width: 500px) {
+  .sort {
+    width: 90%;
+    max-width: 70%;
+    top: auto;
+    bottom: 20px;
+    right: 250%;
+    transform: translateX(50%);
+  }
+}
+User
+/* Общие стили */
+*{
+  outline: 2px solid black !important;
+}
 .sort {
   position: relative;
   margin-right: 0;
-  left: 425px;
-  top: -45px;
+  right: 50px;
+  top: 5px;
 }
 
 .sort__label {
@@ -54,18 +133,10 @@
   }
 }
 
-/* Медиа-запросы для адаптивности */
-@media (max-width: 853px) {
+@media (max-width: 1200px) {
   .sort,
   .sort__label {
-
-    top: -60px;
-    left: 225px;
-  }
-
-  .sort__label {
-    flex-direction: column;
-    align-items: flex-start;
+  
 
     .svgSort {
       display: none;
@@ -74,14 +145,11 @@
     .sortOf {
       margin-bottom: 8px;
     }
-
-
   }
 
   .sort__popup {
     right: 0;
     margin-top: 8px;
-
   }
 
   .sortOf {
@@ -92,26 +160,14 @@
 @media (max-width: 1024px) {
   .sort,
   .sort__label {
-
-    top: -60px;
-    left: 225px;
-  }
-
-  .categories {
-    margin-left: 8%;
-  }
-
-  
-  .svgSort {
-    display: none;
+    top: -45px;
+    left: 35%;
   }
 }
 
 @media (max-width: 500px) {
   .sort,
   .sort__label {
-
-    top: -60px;
-    left: 105px;
+    left: -5%;
   }
 }

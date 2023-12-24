@@ -2,8 +2,8 @@ import React from 'react';
 import './ItemBlock.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { addItem } from '../../../../redux/slices/CartSlice';
+import toast from 'react-hot-toast';
+import { addItem } from '../../../../redux/slices/cart/CartSlice';
 import { selectCartItemById } from '../../../../redux/slices/itemSlice';
 
 export const ItemBlock = ({ title, price, image,viewsCount, id }) => {
@@ -16,6 +16,7 @@ export const ItemBlock = ({ title, price, image,viewsCount, id }) => {
     const item = { id, title, price, image };
 
     dispatch(addItem(item));
+    toast.success("Товар добавлен в корзину")
   };
 
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from "./App"
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
+import toast, { Toaster } from 'react-hot-toast';
 import { store } from './redux/store';
 
 const rootElem = document.getElementById('root');
@@ -14,6 +14,10 @@ const rootElem = document.getElementById('root');
     // <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+      <Toaster 
+        toastOptions={{ 
+          duration: 1400,
+        }}/>
         <App />
       </BrowserRouter>
     </Provider>
