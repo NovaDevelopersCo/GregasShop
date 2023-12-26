@@ -18,7 +18,7 @@ export const CatalogGet = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { categoryId, sort, currentPage } = useSelector(selectFilter);
-  const { items, status } = useSelector(selectItems);
+  const { items, status, totalPages } = useSelector(selectItems);
 
   const { searchValue } = useSearch();
 
@@ -81,7 +81,7 @@ export const CatalogGet = () => {
         <div className="product-list">{status.all === 'loading' ? Skeletons : products}</div>
       )}
 
-      <Pagination currentPage={currentPage} onChangePage={onChangePage}></Pagination>
+      <Pagination currentPage={currentPage} page={totalPages} onChangePage={onChangePage}></Pagination>
     </div>
   );
 };

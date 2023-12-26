@@ -19,7 +19,7 @@ export const Collection = () => {
   const isSearch = React.useRef(false);
 
   const { categoryId, sort, currentPage } = useSelector(selectFilter);
-  const { items, status } = useSelector(selectItems);
+  const { items, status, totalPages} = useSelector(selectItems);
 
   const sortType = sort.orderBy;
   console.log(sortType);
@@ -105,7 +105,7 @@ export const Collection = () => {
          <div className="product-list">{status.all === 'loading' ? Skeletons : products}</div>
       )}
 
-      <Pagination currentPage={currentPage} onChangePage={onChangePage}></Pagination>
+      <Pagination currentPage={currentPage} page={totalPages} onChangePage={onChangePage}></Pagination>
     </div>
   );
 };

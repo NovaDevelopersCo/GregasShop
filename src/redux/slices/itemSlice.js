@@ -6,7 +6,7 @@ export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (para
 
   const queryString = `/posts?page=${currentPage}&limit=4&${category}&orderBy=${SortBy || ''}&tag=${tag || ''}&sortBy=${order || ''}&keyword=${search || ''}&${sale}`;
 
-  const { data } = await axios.get(queryString);
+  const { data } = await axios.get(queryString);console.log(data);
   return data;
 });
 
@@ -15,6 +15,7 @@ export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (para
 
 const initialState = {
   items: [],
+  totalPages: 0,
   itemsNew: [],
   itemsHit: [],
   status: {
@@ -46,6 +47,7 @@ const itemSlice = createSlice({
           state.status.hit = 'success';
         } else if (action.meta.arg.itemCategory === 'all') {
           state.items = action.payload.data;
+          state.totalPages = action.payload.totalPages;
           state.status.all = 'success';
         }
       })
