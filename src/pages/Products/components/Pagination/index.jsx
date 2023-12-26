@@ -3,7 +3,6 @@ import ReactPaginate from 'react-paginate';
 import styles from "./Pagination.module.scss";
 
 export const Pagination = ({currentPage ,page, onChangePage}) => {
-console.log(page);
   return (
     <div>
       <ReactPaginate

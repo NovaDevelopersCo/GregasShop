@@ -21,7 +21,6 @@ export const Sales = () => {
   const { items, status,totalPages } = useSelector(selectItems);
 
   const sortType = sort.orderBy;
-  console.log(sortType);
   const { searchValue } = useSearch();
 
   const onChangeCategory = (id) => {
@@ -58,7 +57,6 @@ export const Sales = () => {
       const params = qs.parse(window.location.search.substring(1));
 
       const sort = list.find((obj) => obj.orderBy === params.orderBy);
-      console.log(sort);
       dispatch(
         setFilters({
           ...params,
