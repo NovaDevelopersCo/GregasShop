@@ -1,3 +1,4 @@
+
 #footer {
 
   .footer-container {
@@ -29,6 +30,25 @@
       line-height: normal;
       display: block;
       margin-bottom: 10px;
+    }
+
+    .copyright{
+      height: 40px;
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      background-color: #000;
+      color: #fff;
+      position: absolute;
+      font-size: 15px;
+      p{
+        margin: 0;
+        a{
+          color: #fff;
+          padding: 0 5px;
+        }
+      }
     }
 
     a {
