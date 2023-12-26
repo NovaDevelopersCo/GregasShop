@@ -52,7 +52,7 @@ const Footer = () => {
             <a rel="nofollow" href="tel:+79964209691">
               +7 (996) 420-96-91
             </a>
-            <a href="mailto:store@greras.shops.ru">store@greras.shops.ru</a>
+            <a href="mailto:goddezz88@mail.ru">store@greras.shops.ru</a>
             <div className="address">
               г. Махачкала
               <br />
@@ -64,8 +64,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="footer-section">
+          <div className="copyright">
+          <p>&copy; Copyright <span id="currentYear"></span><a href='#'>Gregas shop</a><a href='https://github.com/NovaDevelopersCo'>Our Team</a></p>
+          </div>
+      </div>
+
     </footer>
   );
 };
-
+// document.getElementById("currentYear").innerText = new Date().getFullYear();
 export default Footer;

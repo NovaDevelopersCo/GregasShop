@@ -27,7 +27,7 @@ function Navigation({ searchValue, setSearchValue }) {
             <Link to="/hits">Хиты</Link>
           </li>
           <li>
-            <Link to="/">Скидки</Link>
+            <Link to="/sales">Скидки</Link>
           </li>
           <li>
             <Link to="/">Новинки</Link>

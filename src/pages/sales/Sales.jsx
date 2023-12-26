@@ -1,25 +1,24 @@
 import React, { useEffect } from 'react';
-import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter, setCategoryId, setCurrentPage, setFilters } from '../../redux/slices/filterSlice';
-import Categories from './Categories/Categories';
-import { ItemBlock } from '../Products/components/ItemBlock/ItemBlock';
-import './Collection.scss';
-import { Sort, list } from './Sort/Sort';
-import Skeleton from './Skeleton/Skeleton';
-import { useSearch } from '../../hooks/context/SearchContext';
-import { Pagination } from '../Products/components/Pagination';
 import { fetchItems, selectItems } from '../../redux/slices/itemSlice';
+import { useSearch } from '../../hooks/context/SearchContext';
+import qs from 'qs';
+import { list, Sort } from '../Collection/Sort/Sort';
+import Skeleton from '../Collection/Skeleton/Skeleton';
+import { ItemBlock } from '../Products/components/ItemBlock/ItemBlock';
+import Categories from '../Collection/Categories/Categories';
+import { Pagination } from '../Products/components/Pagination';
 
-export const Collection = () => {
+export const Sales = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isMounted = React.useRef(false);
   const isSearch = React.useRef(false);
 
   const { categoryId, sort, currentPage } = useSelector(selectFilter);
-  const { items, status, totalPages} = useSelector(selectItems);
+  const { items, status,totalPages } = useSelector(selectItems);
 
   const sortType = sort.orderBy;
   const { searchValue } = useSearch();
@@ -37,6 +36,7 @@ export const Collection = () => {
     const SortBy = sortType.replace('-', '');
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const search = searchValue ? `${searchValue}` : '';
+    const sale = `sale=${true}`;
 
     dispatch(
       fetchItems({
@@ -45,8 +45,9 @@ export const Collection = () => {
         category,
         search,
         currentPage,
-        itemCategory: 'all'
-      })
+        sale,
+        itemCategory: 'all',
+      }),
     );
   };
 
@@ -60,7 +61,7 @@ export const Collection = () => {
         setFilters({
           ...params,
           sort,
-        })
+        }),
       );
       isSearch.current = true;
     }
@@ -90,9 +91,9 @@ export const Collection = () => {
   const products = items.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock>);
 
   return (
-    <div className="collection-container">
+    <div className='collection-container'>
       <Categories value={categoryId} onClickCategories={onChangeCategory} />
-     <Sort></Sort>
+      <Sort></Sort>
       {status.all === 'error' ? (
         <div className='error-alert'>
           <h1>Произошла ошибка!</h1>
@@ -100,10 +101,12 @@ export const Collection = () => {
           <h2>Попробуйте повторить попытку позже!</h2>
         </div>
       ) : (
-         <div className="product-list">{status.all === 'loading' ? Skeletons : products}</div>
+        <div className='product-list'>{status.all === 'loading' ? Skeletons : products}</div>
       )}
 
       <Pagination currentPage={currentPage} page={totalPages} onChangePage={onChangePage}></Pagination>
     </div>
   );
 };
+
+export default Sales;
