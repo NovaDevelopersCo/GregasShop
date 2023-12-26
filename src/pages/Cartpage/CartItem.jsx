@@ -45,8 +45,6 @@ const CartItem = ({ id, title, price, count, image, totalCount }) => {
     }
   };
 
-  console.log('Rendering CartItem:', { id, title, price, count, image, totalCount });
-
   return (
     <div className={styles.itemCart}>
       <Link to={`/product/${id}/${encodeURIComponent(title)}/${price}/${encodeURIComponent(image)}/${id}`}>

@@ -19,10 +19,9 @@ export const Collection = () => {
   const isSearch = React.useRef(false);
 
   const { categoryId, sort, currentPage } = useSelector(selectFilter);
-  const { items, status } = useSelector(selectItems);
+  const { items, status, totalPages} = useSelector(selectItems);
 
   const sortType = sort.orderBy;
-  console.log(sortType);
   const { searchValue } = useSearch();
 
   const onChangeCategory = (id) => {
@@ -57,7 +56,6 @@ export const Collection = () => {
       const params = qs.parse(window.location.search.substring(1));
 
       const sort = list.find((obj) => obj.orderBy === params.orderBy);
-      console.log(sort)
       dispatch(
         setFilters({
           ...params,
@@ -105,7 +103,7 @@ export const Collection = () => {
          <div className="product-list">{status.all === 'loading' ? Skeletons : products}</div>
       )}
 
-      <Pagination currentPage={currentPage} onChangePage={onChangePage}></Pagination>
+      <Pagination currentPage={currentPage} page={totalPages} onChangePage={onChangePage}></Pagination>
     </div>
   );
 };
