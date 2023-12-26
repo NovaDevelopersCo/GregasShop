@@ -33,6 +33,7 @@ export const CatalogGet = () => {
   const fetchProducts = async () => {
     const tag = searchParams.get('tag') || '';
     const search = searchValue ? `&search=${searchValue}` : '';
+    const mainTag = searchParams.get('mainTag') || '';
 
     dispatch(
       fetchItems({
@@ -40,6 +41,7 @@ export const CatalogGet = () => {
         currentPage,
         itemCategory: 'all',
         tag,
+        mainTag,
       })
     );
   };
@@ -67,7 +69,7 @@ export const CatalogGet = () => {
   const products = items.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock>);
 
 
-  const tagsH1 = searchParams.get('tag') || 'All';
+  const tagsH1 = searchParams.get('tag') || (searchParams.get('mainTag') || 'Все товары');
   return (
     <div className="collection-container">
       <h1> Товары на тему: {tagsH1} </h1>
