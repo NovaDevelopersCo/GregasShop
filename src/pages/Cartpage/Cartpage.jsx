@@ -30,7 +30,6 @@ export const Cartpage = () => {
     );
   };
 
-
   if (!totalPrice) {
     return <CartEmpty />;
   }
@@ -59,9 +58,10 @@ export const Cartpage = () => {
           </div>
         </div>
         <div className={styles.CartItems}>
+          
           {items.map((item) => (
-            <CartItem key={item.id} {...item} />
-          ))}
+            <CartItem key={item._id} {...item} />
+          ), console.log(items))}
         </div>
       </div>
     </div>
