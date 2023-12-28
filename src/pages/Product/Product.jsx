@@ -19,7 +19,6 @@ export const Product = () => {
     axios
       .get(`/posts/${_id}`)
       .then(({ data }) => {
-        console.log(data);
         setData(data);
         setPrice(data.price);
         setTitle(data.title);

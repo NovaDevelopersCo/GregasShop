@@ -52,7 +52,7 @@ export const ItemBlock = ({ title, price, image,viewsCount, _id }) => {
           className="addtoButton-active"
           data-toggle="button"
           aria-pressed="false"
-          autocomplete="off"
+          autoComplete="off"
         >
           <span onClick={onClickAdd} className="ScoreBtn">
             Добавлено ({addedCount})

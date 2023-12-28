@@ -26,7 +26,6 @@ const sliderSlice = createSlice({
         state.status.all = 'loading'
       })
       .addCase(fetchSlider.fulfilled, (state, action) => {
-        console.log('Fetched news data:', action.payload.data);
         state.status.all = 'success';
         if (action.meta.arg.itemCategory === 'all') {
           state.slider = action.payload;

@@ -66,7 +66,7 @@ export const CatalogGet = () => {
   }, [ searchValue, currentPage]);
 
   const Skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}></Skeleton>);
-  const products = items.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock>);
+  const products = items.map((obj) => <ItemBlock key={obj._id} {...obj}></ItemBlock>);
 
 
   const tagsH1 = searchParams.get('tag') || (searchParams.get('mainTag') || 'Все товары');

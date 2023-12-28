@@ -3,7 +3,6 @@ import { getCartFromLS } from '../../../utils/getCartFromLS';
 import { calcTotalPrice } from '../../../utils/calcTotalPrice';
 
 const {items, totalPrice} = getCartFromLS()
-console.log(items);
 const initialState = {
   totalPrice,
   items,
@@ -28,7 +27,6 @@ const CartSlice = createSlice({
 
       state.totalPrice = calcTotalPrice(state.items);
 
-      console.log('New State:', state); // Add this log for debugging
     },
     minusItem(state, action) {
       const itemToDecrement = state.items.find((item) => item._id === action.payload);
@@ -39,7 +37,6 @@ const CartSlice = createSlice({
 
           if (itemToDecrement.count === 0) {
             state.items = state.items.filter((item) => item._id !== action.payload);
-            console.log(items);
           }
         }
       }

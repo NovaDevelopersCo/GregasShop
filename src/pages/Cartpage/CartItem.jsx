@@ -11,7 +11,6 @@ const CartItem = ({ _id, title, price, count, image, totalCount }) => {
   const { items, totalPrice } = useSelector(selectCart);
   const isMounted = React.useRef(false);
 
-  console.log(_id);
   React.useEffect(() => {
     if (isMounted.current) {
       const json = JSON.stringify(items);

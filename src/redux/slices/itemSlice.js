@@ -3,7 +3,6 @@ import axios from '../../axios';
 
 export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params) => {
   const { order, SortBy, category, search, currentPage, tag, sale, mainTag } = params;
-  console.log(mainTag);
 
   // Update queryString to include mainTag parameter
   const queryString = `/posts?page=${currentPage}&limit=4&${category}&orderBy=${SortBy || ''}&tag=${tag || ''}&mainTag=${mainTag || ''}&sortBy=${order || ''}&keyword=${search || ''}&${sale}`;

@@ -21,8 +21,8 @@ export const NewsWall = () => {
         <div className="NewsWallText">News:</div>
         <div className="NewsWallPhotos">
           {news && news.length > 0 ? (
-            news.map((obj) => (
-              <div className="data-container" key={obj._id}>
+            news.map((obj,  index) => (
+              <div className="data-container" key={index}>
                 <a href="/home">
                   <div className="image-containerNewsWallOne">
                     <img src={obj.imgUrl} alt={obj.title} />

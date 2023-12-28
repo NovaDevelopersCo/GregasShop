@@ -30,7 +30,6 @@ export const Cartpage = () => {
     );
   };
 
-console.log(items)
   if (!totalPrice) {
     return <CartEmpty />;
   }
