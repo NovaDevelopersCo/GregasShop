@@ -6,15 +6,14 @@ import toast from 'react-hot-toast';
 import { addItem } from '../../../../redux/slices/cart/CartSlice';
 import { selectCartItemById } from '../../../../redux/slices/itemSlice';
 
-export const ItemBlock = ({ title, price, image,viewsCount, id }) => {
+export const ItemBlock = ({ title, price, image,viewsCount, _id }) => {
   const dispatch = useDispatch();
-  const cartItem = useSelector(selectCartItemById(id));
+  const cartItem = useSelector(selectCartItemById(_id));
 
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = { id, title, price, image };
-
+    const item = { _id, title, price, image };
     dispatch(addItem(item));
     toast.success("Товар добавлен в корзину")
   };
@@ -22,7 +21,7 @@ export const ItemBlock = ({ title, price, image,viewsCount, id }) => {
   return (
     <div className="ItemBlock">
       <div className="NewPhotos">
-        <Link to={`/product/${id}/${encodeURIComponent(title)}/${price}/${encodeURIComponent(image)}/${id}`}>
+        <Link to={`/itm/${_id}`}>
           <div className="Item-container">
             <div className="image-container">
               <img className="image-item" key={image} src={image} alt="Product 1" />

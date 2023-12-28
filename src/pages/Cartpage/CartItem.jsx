@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import toast from 'react-hot-toast';
 
-const CartItem = ({ id, title, price, count, image, totalCount }) => {
+const CartItem = ({ _id, title, price, count, image, totalCount }) => {
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector(selectCart);
   const isMounted = React.useRef(false);
 
+  console.log(_id);
   React.useEffect(() => {
     if (isMounted.current) {
       const json = JSON.stringify(items);
@@ -22,7 +23,7 @@ const CartItem = ({ id, title, price, count, image, totalCount }) => {
   const onClickPlus = () => {
     dispatch(
       addItem({
-        id,
+        _id,
         price,
         count,
       })
@@ -31,23 +32,23 @@ const CartItem = ({ id, title, price, count, image, totalCount }) => {
   };
 
   const onClickMinus = () => {
-    dispatch(minusItem(id));
+    dispatch(minusItem(_id));
     toast.error("Товар удалён из корзины")
    
   };
   const onClickRemove = () => {
     if (window.confirm('Удалить это?')) {
-      const updatedItems = items.filter(item => item.id !== id);
+      const updatedItems = items.filter(item => item._id !== _id);
       const json = JSON.stringify(updatedItems);
       localStorage.setItem('cart', json);
-      dispatch(removeItem(id));
+      dispatch(removeItem(_id));
       toast.error("Товар удалён из корзины")
     }
   };
 
   return (
     <div className={styles.itemCart}>
-      <Link to={`/product/${id}/${encodeURIComponent(title)}/${price}/${encodeURIComponent(image)}/${id}`}>
+      <Link to={`/itm/${_id}`}>
         <img className={styles.CartImage} src={image}></img>
       </Link>
       <div className={styles.price}>{price * count}₽</div>

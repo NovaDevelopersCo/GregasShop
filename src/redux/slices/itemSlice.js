@@ -62,7 +62,7 @@ const itemSlice = createSlice({
 
 // Переместите операторы export на верхний уровень файла
 export const selectItems = (state) => state.itemSlice;
-export const selectCartItemById = (id) => (state) => state.CartSlice.items.find((obj) => obj.id === id);
+export const selectCartItemById = (_id) => (state) => state.CartSlice.items.find((obj) => obj._id === _id);
 
 export const { setItems } = itemSlice.actions;
 

@@ -69,7 +69,7 @@ export const routes = [
         element: <CatalogPage />,
       },
       {
-        path: 'product/:productId/:title/:price/:image/:id',
+        path: 'itm/:_id',
         element: <Product />,
       },
       {
