@@ -4,6 +4,7 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
+    
     <footer id="footer">
       <div className="footer-container">
         <div className="footer-section">

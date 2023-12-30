@@ -32,7 +32,7 @@ export const New = () => {
       fetchProducts();
   }, []);
   const Skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}></Skeleton>);
-  const products = itemsNew.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock >);
+  const products = itemsNew.map((obj) => <ItemBlock key={obj._id} {...obj}></ItemBlock >);
   return (
     <div className="NewSlider">
       <p className="NewSliderText"> Новинки </p>

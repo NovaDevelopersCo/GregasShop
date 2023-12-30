@@ -6,66 +6,38 @@ import toast from 'react-hot-toast';
 import { addItem } from '../../../../redux/slices/cart/CartSlice';
 import { selectCartItemById } from '../../../../redux/slices/itemSlice';
 
-export const ItemBlock = ({ title, price, image,viewsCount, id }) => {
+export const ItemBlock = ({ title, price, image, viewsCount, _id }) => {
   const dispatch = useDispatch();
-  const cartItem = useSelector(selectCartItemById(id));
-
+  const cartItem = useSelector(selectCartItemById(_id));
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = { id, title, price, image };
-
+    const item = { _id, title, price, image };
     dispatch(addItem(item));
-    toast.success("Товар добавлен в корзину")
+    toast.success('Товар добавлен в корзину');
   };
 
   return (
     <div className="ItemBlock">
-      <div className="NewPhotos">
-        <Link to={`/product/${id}/${encodeURIComponent(title)}/${price}/${encodeURIComponent(image)}/${id}`}>
-          <div className="Item-container">
-            <div className="image-container">
-              <img className="image-item" key={image} src={image} alt="Product 1" />
-            </div>
-            <p className="ItemBlockParag">
-              <a key={title} href="/home/" className="link">
-                {title}
-              </a>
-              <a href="/home/"></a>
-              <p key={price} className="Price">
-                {price}₽
-              </p>
-              <p className="Stock">
-                В наличии: <b>666</b>
-                <div className="line"></div>
-                <p className="Sold">
-                  Продано за месяц: <b>{viewsCount} шт</b>
-                </p>
-              </p>
-            </p>
-          </div>
-        </Link>
-      </div>
+      <Link to={`/itm/${_id}`} className="ItemLink">
+        <div className="ItemImageContainer">
+          <img className="ItemImage" src={image} alt={title} />
+        </div>
+        <div className="ItemDetails">
+          <p className="ItemTitle">{title}</p>
+          <p className="ItemPrice">{price}₽</p>
+          <p className="ItemStock">В наличии: <b>666</b></p>
+          <p className="ItemSold">Продано за месяц: <b>{viewsCount} шт</b></p>
+        </div>
+      </Link>
 
-      {addedCount > 0 ? (
-        <button
-          type="button"
-          className="addtoButton-active"
-          data-toggle="button"
-          aria-pressed="false"
-          autocomplete="off"
-        >
-          <span onClick={onClickAdd} className="ScoreBtn">
-            Добавлено ({addedCount})
-          </span>
-        </button>
-      ) : (
-        <button type="button" className="addtoButton" data-toggle="button" aria-pressed="false" autocomplete="off">
-          <span onClick={onClickAdd} className="ScoreBtn">
-            В корзину
-          </span>
-        </button>
-      )}
+      <button
+        type="button"
+        className={`AddToCartButton ${addedCount > 0 ? 'active' : ''}`}
+        onClick={onClickAdd}
+      >
+        {addedCount > 0 ? `Добавлено (${addedCount})` : 'В корзину'}
+      </button>
     </div>
   );
 };

@@ -33,7 +33,7 @@ export const Hit = () => {
     []);
   
   const Skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index}></Skeleton>);
-  const products = itemsHit.map((obj) => <ItemBlock key={obj.id} {...obj}></ItemBlock>);
+  const products = itemsHit.map((obj) => <ItemBlock key={obj._id} {...obj}></ItemBlock>);
 
   return (
     <div className="HitSlider">

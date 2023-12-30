@@ -17,7 +17,6 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 export const Slider = () => {
   const dispatch = useDispatch();
   const { slider } = useSelector(selectSlider);
-  console.log(slider)
 
   React.useEffect(() => {
     const fetchProducts = async () => {

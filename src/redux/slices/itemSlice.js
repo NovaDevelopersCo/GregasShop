@@ -2,14 +2,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../../axios';
 
 export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params) => {
-  const { order, SortBy, category, search, currentPage, tag,sale } = params;
+  const { order, SortBy, category, search, currentPage, tag, sale, mainTag } = params;
 
-  const queryString = `/posts?page=${currentPage}&limit=4&${category}&orderBy=${SortBy || ''}&tag=${tag || ''}&sortBy=${order || ''}&keyword=${search || ''}&${sale}`;
+  // Update queryString to include mainTag parameter
+  const queryString = `/posts?page=${currentPage}&limit=4&${category}&orderBy=${SortBy || ''}&tag=${tag || ''}&mainTag=${mainTag || ''}&sortBy=${order || ''}&keyword=${search || ''}&${sale}`;
 
-  const { data } = await axios.get(queryString);console.log(data);
+  const { data } = await axios.get(queryString);
   return data;
 });
-
 
 
 
@@ -31,7 +31,7 @@ const itemSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchItems.pending, (state, action) => {
+      .addCase(fetchItems.pending, (state) => {
         state.status.all = 'loading';
         state.status.new = 'loading';
         state.status.hit = 'loading';
@@ -51,7 +51,7 @@ const itemSlice = createSlice({
           state.status.all = 'success';
         }
       })
-      .addCase(fetchItems.rejected, (state, action) => {
+      .addCase(fetchItems.rejected, (state) => {
         state.status.all = 'error';
         state.status.new = 'error';
         state.status.hit = 'error';
@@ -61,7 +61,7 @@ const itemSlice = createSlice({
 
 // Переместите операторы export на верхний уровень файла
 export const selectItems = (state) => state.itemSlice;
-export const selectCartItemById = (id) => (state) => state.CartSlice.items.find((obj) => obj.id === id);
+export const selectCartItemById = (_id) => (state) => state.CartSlice.items.find((obj) => obj._id === _id);
 
 export const { setItems } = itemSlice.actions;
 
