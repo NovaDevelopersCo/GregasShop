@@ -1,13 +1,22 @@
 // ItemBlock.scss
 
 .ItemBlock {
-  max-width: 480px; /* Increase the max-width by 20% */
-  margin: 18px; /* Increase the margin for more spacing */
-  border-radius: 24px; /* Increase the border-radius for rounded corners */
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 18px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 
+  .OldPrice {
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+
+
+  }
   &:hover {
     transform: translateY(-12px);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
@@ -24,12 +33,13 @@
     flex-direction: column;
     text-decoration: none;
     color: black;
+    flex: 1
   }
 
   .ItemImageContainer {
     overflow: hidden;
     border-radius: 24px 24px 0 0; /* Adjust border-radius */
-    height: 240px; /* Increase the height by 20% */
+    height: 200px; /* Increase the height by 20% */
 
     .ItemImage {
       width: 100%;
@@ -37,30 +47,36 @@
       object-fit: cover;
     }
   }
-
+p{
+  margin: 0;
+}
   .ItemDetails {
-    padding: 24px; /* Increase padding */
+    padding: 24px;
+    flex: 1;
 
-    .ItemTitle {
-      font-size: 2.16rem; /* Increase font size by 20% */
-      margin-bottom: 12px; /* Increase margin-bottom for more spacing */
+    .PriceWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px; /* Отступ между ценой и старой ценой */
+    }
+
+    .OldPrice {
+      font-size: 13px;
+      color: #999;
+      text-decoration: line-through;
+      margin-right: auto;
+
     }
 
     .ItemPrice {
-      font-size: 1.68rem; /* Increase font size by 20% */
+      font-size: 1.68rem;
       font-weight: bold;
       color: #333;
-      margin-bottom: 18px; /* Increase margin-bottom for more spacing */
+      margin-right: 5px;
     }
 
-    .ItemStock,
-    .ItemSold {
-      font-size: 1.2rem; /* Increase font size by 20% */
-      color: #666;
-      margin-bottom: 12px; /* Increase margin-bottom for more spacing */
-    }
-  }
-}
+  }}
 
 .AddToCartButton {
   width: 100%;

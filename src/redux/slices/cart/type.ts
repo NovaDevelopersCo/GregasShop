@@ -6,9 +6,11 @@ export type CartItem = {
     type: string;
     size: number;
     count: number;
+    oldPrice: number;
   };
   
   export interface CartSliceState {
     totalPrice: number;
+    totalSale: number;
     items: CartItem[];
   }

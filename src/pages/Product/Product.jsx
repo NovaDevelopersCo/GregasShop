@@ -14,6 +14,8 @@ export const Product = () => {
   const [price, setPrice] = useState(0);
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
+  const [sale, setSale] = useState(null); // Новое состояние для информации о скидке
+  const [oldPrice, setOldPrice] = useState(null); // Новое состояние для информации о старой цене
 
   useEffect(() => {
     axios
@@ -23,6 +25,8 @@ export const Product = () => {
         setPrice(data.price);
         setTitle(data.title);
         setImage(data.image);
+        setSale(data.sale || null); // Если свойства sale нет, устанавливаем null
+        setOldPrice(data.oldPrice); // Устанавливаем информацию о старой цене
       })
       .catch((err) => {
         alert('Ошибка при получении статьи');
@@ -34,7 +38,7 @@ export const Product = () => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   const addToCart = () => {
-    const item = { price, _id, title, image };
+    const item = { price, _id, title, image, sale, oldPrice };
     dispatch(addItem(item));
     toast.success('Товар добавлен в корзину');
   };
@@ -52,9 +56,16 @@ export const Product = () => {
         <img className={style.ProductImage} src={image} alt={`Изображение ${title}`} />
         <div className={style.Mainbox}>
           <div className={style.PriceBox}>
-            <p className={style.PriceTag}>
-              Цена:<b className={style.price}> {price} ₽</b>{' '}
-            </p>
+            <div className={style.PriceRow}>
+              <p className={style.PriceTag}>
+                Цена: {price} ₽
+              </p>
+              {sale !== null && (
+                <p className={style.OldPrice}>
+                 {oldPrice} ₽
+                </p>
+              )}
+            </div>
             <p className={style.OrderDate}>
               <b>доставка 5 дней</b>
             </p>
