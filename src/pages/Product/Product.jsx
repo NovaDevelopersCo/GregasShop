@@ -14,15 +14,19 @@ export const Product = () => {
   const [price, setPrice] = useState(0);
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
+  const [text, setText] = useState('');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(`/posts/${_id}`)
       .then(({ data }) => {
         setData(data);
+        setImage(data.image);
         setPrice(data.price);
         setTitle(data.title);
-        setImage(data.image);
+        setText(data.text);
+
       })
       .catch((err) => {
         alert('Ошибка при получении статьи');
@@ -92,9 +96,7 @@ export const Product = () => {
         <div className={style.Description}>
           <h4>Описание</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo alias dolorum asperiores, similique fugiat
-            ipsa voluptate nihil, facere harum vero amet labore quisquam illo veniam beatae porro repudiandae repellendus
-            suscipit!
+            {text}
           </p>
         </div>
       </div>
