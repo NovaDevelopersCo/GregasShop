@@ -107,7 +107,7 @@ export const Product = () => {
         <div className={style.Description}>
           <h4>Описание</h4>
           <p>
-            {text}
+            {data.text}
           </p>
         </div>
       </div>
