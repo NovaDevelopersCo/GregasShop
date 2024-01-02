@@ -17,16 +17,20 @@ export const Product = () => {
   const [sale, setSale] = useState(null); // Новое состояние для информации о скидке
   const [oldPrice, setOldPrice] = useState(null); // Новое состояние для информации о старой цене
 
+
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(`/posts/${_id}`)
       .then(({ data }) => {
         setData(data);
+        setImage(data.image);
         setPrice(data.price);
         setTitle(data.title);
         setImage(data.image);
         setSale(data.sale || null); // Если свойства sale нет, устанавливаем null
         setOldPrice(data.oldPrice); // Устанавливаем информацию о старой цене
+
       })
       .catch((err) => {
         alert('Ошибка при получении статьи');
@@ -103,9 +107,7 @@ export const Product = () => {
         <div className={style.Description}>
           <h4>Описание</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo alias dolorum asperiores, similique fugiat
-            ipsa voluptate nihil, facere harum vero amet labore quisquam illo veniam beatae porro repudiandae repellendus
-            suscipit!
+            {text}
           </p>
         </div>
       </div>
