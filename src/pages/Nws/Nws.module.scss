@@ -1,0 +1,75 @@
+// Nws.module.scss
+.newscontainer {
+  display: flex;
+  flex-direction: column; /* Изменено направление flex на column для мобильных устройств */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #ddd; /* добавлен стиль границы */
+}
+
+.newsimage {
+  width: 80%; /* увеличено на 30% */
+  margin-bottom: 20px; /* добавлен отступ снизу для мобильных устройств */
+  border-radius: 8px;
+  border: 1px solid #ddd; /* добавлен стиль границы */
+}
+
+.newscontent {
+  flex: 1;
+}
+
+.newsheader {
+  font-size: 2rem; /* изменен размер шрифта */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsinfo {
+  font-size: 1.2rem; /* изменен размер шрифта */
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.newstext {
+  font-size: 1.4rem; /* изменен размер шрифта */
+  line-height: 1.6;
+}
+
+.createdAt {
+  font-size: 1rem; /* изменен размер шрифта */
+  color: #999;
+}
+
+@media (min-width: 600px) {
+  .newscontainer {
+    flex-direction: row; /* Возвращаем направление flex на row для устройств с шириной экрана 600px и более */
+  }
+
+  .newsimage {
+    margin-bottom: 0; /* Убираем отступ снизу для устройств с шириной экрана 600px и более */
+    margin-right: 20px;
+  }
+} 
+.collectionContainerSkeleton {
+  width: 101%;
+}
+@media (max-width: 653px) {
+  .collectionContainerSkeleton {
+    display: flex;
+    flex-wrap: wrap;
+    width: 101%;
+    margin-top: -180px;
+  }
+}
+@media (max-width: 500px) {
+  .collectionContainerSkeleton {
+    display: flex;
+    flex-wrap: wrap;
+    width: 101%;
+    margin-top: -180px;
+  }
+}

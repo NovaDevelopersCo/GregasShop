@@ -14,15 +14,23 @@ export const Product = () => {
   const [price, setPrice] = useState(0);
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
+  const [sale, setSale] = useState(null); // Новое состояние для информации о скидке
+  const [oldPrice, setOldPrice] = useState(null); // Новое состояние для информации о старой цене
+
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(`/posts/${_id}`)
       .then(({ data }) => {
         setData(data);
+        setImage(data.image);
         setPrice(data.price);
         setTitle(data.title);
         setImage(data.image);
+        setSale(data.sale || null); // Если свойства sale нет, устанавливаем null
+        setOldPrice(data.oldPrice); // Устанавливаем информацию о старой цене
+
       })
       .catch((err) => {
         alert('Ошибка при получении статьи');
@@ -34,7 +42,7 @@ export const Product = () => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   const addToCart = () => {
-    const item = { price, _id, title, image };
+    const item = { price, _id, title, image, sale, oldPrice };
     dispatch(addItem(item));
     toast.success('Товар добавлен в корзину');
   };
@@ -52,9 +60,16 @@ export const Product = () => {
         <img className={style.ProductImage} src={image} alt={`Изображение ${title}`} />
         <div className={style.Mainbox}>
           <div className={style.PriceBox}>
-            <p className={style.PriceTag}>
-              Цена:<b className={style.price}> {price} ₽</b>{' '}
-            </p>
+            <div className={style.PriceRow}>
+              <p className={style.PriceTag}>
+                Цена: {price} ₽
+              </p>
+              {sale !== null && (
+                <p className={style.OldPrice}>
+                 {oldPrice} ₽
+                </p>
+              )}
+            </div>
             <p className={style.OrderDate}>
               <b>доставка 5 дней</b>
             </p>
@@ -92,9 +107,7 @@ export const Product = () => {
         <div className={style.Description}>
           <h4>Описание</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo alias dolorum asperiores, similique fugiat
-            ipsa voluptate nihil, facere harum vero amet labore quisquam illo veniam beatae porro repudiandae repellendus
-            suscipit!
+            {data.text}
           </p>
         </div>
       </div>

@@ -1,3 +1,5 @@
+// ItemBlock.jsx
+
 import React from 'react';
 import './ItemBlock.scss';
 import { Link } from 'react-router-dom';
@@ -6,13 +8,13 @@ import toast from 'react-hot-toast';
 import { addItem } from '../../../../redux/slices/cart/CartSlice';
 import { selectCartItemById } from '../../../../redux/slices/itemSlice';
 
-export const ItemBlock = ({ title, price, image, viewsCount, _id }) => {
+export const ItemBlock = ({ title, price, image, viewsCount, _id,  sale, oldPrice }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemById(_id));
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = { _id, title, price, image };
+    const item = { _id, title, price, image, sale, oldPrice };
     dispatch(addItem(item));
     toast.success('Товар добавлен в корзину');
   };
@@ -25,7 +27,10 @@ export const ItemBlock = ({ title, price, image, viewsCount, _id }) => {
         </div>
         <div className="ItemDetails">
           <p className="ItemTitle">{title}</p>
-          <p className="ItemPrice">{price}₽</p>
+          <div className="PriceWrapper">
+            <p className="ItemPrice">{price}₽</p>
+            {sale && <p className="OldPrice">{oldPrice}₽</p>}
+          </div>
           <p className="ItemStock">В наличии: <b>666</b></p>
           <p className="ItemSold">Продано за месяц: <b>{viewsCount} шт</b></p>
         </div>
