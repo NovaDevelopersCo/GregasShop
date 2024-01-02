@@ -5,8 +5,7 @@ export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (para
   const { order, SortBy, category, search, currentPage, tag, sale, mainTag } = params;
 
   // Update queryString to include mainTag parameter
-  const queryString = `/posts?page=${currentPage}&limit=4&${category}&orderBy=${SortBy || ''}&sortBy=${order || ''}&tag=${tag || ''}&mainTag=${mainTag || ''}&keyword=${search || ''}&${sale}`;
-
+  const queryString = `/posts?page=${currentPage}&limit=5&${category}&orderBy=${SortBy || ''}&tag=${tag || ''}&mainTag=${mainTag || ''}&sortBy=${order || ''}&keyword=${search || ''}&${sale}`;
 
   const { data } = await axios.get(queryString);
   return data;

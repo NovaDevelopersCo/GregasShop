@@ -16,6 +16,7 @@ import { Login } from './pages/Login';
 import { Hits } from './pages/Hits/Hits';
 import { Registration } from './pages/Registration';
 import UserPage from './pages/userPage/UserPage';
+import { Nws } from './pages/Nws/Nws';
 import { CatalogGet } from './pages/catalogGet/CatalogGet';
 import Sales from './pages/sales/Sales';
 import { News } from './pages/newsItems/News';
@@ -97,17 +98,24 @@ export const routes = [
       {
         path: 'register',
         element: <Registration />,
-      },{
+      },
+      {
         path: 'userpage',
         element: <UserPage />,
       },
       {
+        path: 'nws/:_id',
+        element: <Nws />,
+      },
+      {
         path: 'catalogget',
         element: <CatalogGet />,
-      }, {
+      },
+      {
         path: 'sales',
         element: <Sales />,
-      }, {
+      },
+      {
         path: 'news',
         element: <News />,
       }

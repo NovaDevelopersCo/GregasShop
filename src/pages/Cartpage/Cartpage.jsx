@@ -46,7 +46,7 @@ export const Cartpage = () => {
         <div className={styles.Sidebox}>
           <div className={styles.CartName}>Ваша корзина</div>
           <div className={styles.WrapperSum}>
-            <div className={styles.sumItem}>Товары </div>
+            <div className={styles.sumItem}>Товары: {totalCount} шт. </div>
             <div className={styles.sumPrice}>
               {' '}
               <b>{totalPrice}₽</b>
@@ -61,7 +61,7 @@ export const Cartpage = () => {
           
           {items.map((item) => (
             <CartItem key={item._id} {...item} />
-          ), console.log(items))}
+          ),)}
         </div>
       </div>
     </div>

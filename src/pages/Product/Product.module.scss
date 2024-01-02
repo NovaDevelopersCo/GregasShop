@@ -63,8 +63,24 @@
 .PriceTag {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-}
+  margin-right: 2%;
 
+
+}
+.PriceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.OldPrice {
+  font-size: 13px;
+  color: #999;
+  text-decoration: line-through;
+  margin-right: auto;
+margin-top: 5%;
+
+}
 .price {
   color: #0066cc;
 }
@@ -135,6 +151,7 @@ h4 {
 
 // Media Query for smaller screens
 @media (max-width: 768px) {
+ 
   .ProductBox {
     flex-direction: column;
   }
