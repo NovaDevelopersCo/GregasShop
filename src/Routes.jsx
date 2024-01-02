@@ -19,6 +19,7 @@ import UserPage from './pages/userPage/UserPage';
 import { Nws } from './pages/Nws/Nws';
 import { CatalogGet } from './pages/catalogGet/CatalogGet';
 import Sales from './pages/sales/Sales';
+import News from './pages/newItems/News';
 
 export const routes = [
   {
@@ -113,6 +114,10 @@ export const routes = [
         path: 'sales',
         element: <Sales />,
       },
+      {
+        path: 'news',
+        element: <News />,
+      }
     ],
   },
 ];
