@@ -65,7 +65,7 @@ export const MainGui = ({ searchValue, setSearchValue }) => {
             </Link>
           </div>
           <div className={styles.Item}>
-            <Link to="/" className={styles.itemText}>
+            <Link to="/news" className={styles.itemText}>
               Новинки
             </Link>
           </div>
@@ -85,7 +85,7 @@ export const MainGui = ({ searchValue, setSearchValue }) => {
                 <Link to="/sales" onClick={handleItemClick}>Скидки</Link>
               </li>
               <li>
-                <Link to="/" onClick={handleItemClick}>Новинки</Link>
+                <Link to="/news" onClick={handleItemClick}>Новинки</Link>
               </li>
             </div>
             </ul>

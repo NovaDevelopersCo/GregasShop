@@ -18,6 +18,7 @@ import { Registration } from './pages/Registration';
 import UserPage from './pages/userPage/UserPage';
 import { CatalogGet } from './pages/catalogGet/CatalogGet';
 import Sales from './pages/sales/Sales';
+import News from './pages/newItems/News';
 
 export const routes = [
   {
@@ -105,6 +106,9 @@ export const routes = [
       }, {
         path: 'sales',
         element: <Sales />,
+      }, {
+        path: 'news',
+        element: <News />,
       }
     ],
   },
