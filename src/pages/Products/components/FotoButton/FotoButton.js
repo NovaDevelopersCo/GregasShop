@@ -26,7 +26,7 @@ export const FotoButton = () => {
       {categories.map((category, index) => (
         <div className="fotoItem" key={index}>
           <Link to={`/catalogget?mainTag=${category}`}>
-            <img src={fotoImages[index]} alt={`Foto ${index + 1}`} />
+            <img  src={fotoImages[index]} alt={`Foto ${index + 1}`} />
           </Link>
           <p>{category}</p>
         </div>

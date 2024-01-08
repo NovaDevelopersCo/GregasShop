@@ -20,6 +20,8 @@
 .fotoItem img {
   width: 100%;
   max-width: 180px;
+  min-width: 100px;
+  min-height: 120px;
   height: auto;
   border-radius: 2px;
 }
@@ -40,7 +42,8 @@
   }
 
   .fotoItem img {
-    max-width: 150px; /* Уменьшаем ширину изображения для устройств с шириной экрана от 768px до 1023px */
+    max-width: 150px;
+    max-height: 120px/* Уменьшаем ширину изображения для устройств с шириной экрана от 768px до 1023px */
   }
 }
 

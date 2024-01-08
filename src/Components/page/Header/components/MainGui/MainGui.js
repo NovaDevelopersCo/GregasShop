@@ -5,8 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Search, Cart } from '../index';
 import user from '../../../../../assets/images/user.png';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-
-
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
